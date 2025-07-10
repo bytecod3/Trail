@@ -57,6 +57,12 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define BTN_LEFT_Pin GPIO_PIN_13
+#define BTN_LEFT_GPIO_Port GPIOC
+#define BTN_DOWN_Pin GPIO_PIN_14
+#define BTN_DOWN_GPIO_Port GPIOC
+#define BTN_UP_Pin GPIO_PIN_15
+#define BTN_UP_GPIO_Port GPIOC
 #define U_LED_Pin GPIO_PIN_0
 #define U_LED_GPIO_Port GPIOC
 #define GPS_PPS_Pin GPIO_PIN_1
@@ -75,6 +81,10 @@ void Error_Handler(void);
 #define SWDIO_GPIO_Port GPIOA
 #define SWCLK_Pin GPIO_PIN_14
 #define SWCLK_GPIO_Port GPIOA
+#define BTN_OK_Pin GPIO_PIN_11
+#define BTN_OK_GPIO_Port GPIOC
+#define BTN_RIGHT_Pin GPIO_PIN_12
+#define BTN_RIGHT_GPIO_Port GPIOC
 
 /* USER CODE BEGIN Private defines */
 

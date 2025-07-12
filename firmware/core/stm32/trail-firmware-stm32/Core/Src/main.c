@@ -107,6 +107,9 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  HAL_GPIO_TogglePin(USER_LED_GPIO_Port, USER_LED_Pin);
+	  HAL_Delay(700);
+
   }
   /* USER CODE END 3 */
 }
@@ -273,9 +276,9 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(U_LED_GPIO_Port, U_LED_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : BTN_LEFT_Pin BTN_DOWN_Pin BTN_UP_Pin GPS_PPS_Pin
-                           IMU_INT_Pin BTN_OK_Pin BTN_RIGHT_Pin */
+                           IMU_INT_Pin BTN_OKC11_Pin */
   GPIO_InitStruct.Pin = BTN_LEFT_Pin|BTN_DOWN_Pin|BTN_UP_Pin|GPS_PPS_Pin
-                          |IMU_INT_Pin|BTN_OK_Pin|BTN_RIGHT_Pin;
+                          |IMU_INT_Pin|BTN_OKC11_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
@@ -287,11 +290,28 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(U_LED_GPIO_Port, &GPIO_InitStruct);
 
+  /*Configure GPIO pins : BTN_RIGHT_Pin BTN_OK_Pin */
+  GPIO_InitStruct.Pin = BTN_RIGHT_Pin|BTN_OK_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */
+
+/**
+  * @brief  This task is used to monitor for button presses
+  * @retval None
+  */
+void ButtonCheckTask(void* pvParameters) {
+
+	while (1) {
+
+	}
+}
 
 /* USER CODE END 4 */
 

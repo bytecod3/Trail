@@ -67,6 +67,10 @@ void Error_Handler(void);
 #define U_LED_GPIO_Port GPIOC
 #define GPS_PPS_Pin GPIO_PIN_1
 #define GPS_PPS_GPIO_Port GPIOC
+#define BTN_RIGHT_Pin GPIO_PIN_0
+#define BTN_RIGHT_GPIO_Port GPIOA
+#define BTN_OK_Pin GPIO_PIN_1
+#define BTN_OK_GPIO_Port GPIOA
 #define GPS_RX_Pin GPIO_PIN_2
 #define GPS_RX_GPIO_Port GPIOA
 #define GPS_TX_Pin GPIO_PIN_3
@@ -81,10 +85,8 @@ void Error_Handler(void);
 #define SWDIO_GPIO_Port GPIOA
 #define SWCLK_Pin GPIO_PIN_14
 #define SWCLK_GPIO_Port GPIOA
-#define BTN_OK_Pin GPIO_PIN_11
-#define BTN_OK_GPIO_Port GPIOC
-#define BTN_RIGHT_Pin GPIO_PIN_12
-#define BTN_RIGHT_GPIO_Port GPIOC
+#define BTN_OKC11_Pin GPIO_PIN_11
+#define BTN_OKC11_GPIO_Port GPIOC
 
 /* USER CODE BEGIN Private defines */
 

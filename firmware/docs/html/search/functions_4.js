@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['hal_5fi2c_5fmspdeinit_0',['HAL_I2C_MspDeInit',['../d8/df7/stm32f4xx__hal__msp_8c.html#a2ec8d9b09854c732e2feed549278f048',1,'stm32f4xx_hal_msp.c']]],
-  ['hal_5fi2c_5fmspinit_1',['HAL_I2C_MspInit',['../d8/df7/stm32f4xx__hal__msp_8c.html#abe01a202c27b23fc150aa66af3130073',1,'stm32f4xx_hal_msp.c']]],
-  ['hal_5fmspinit_2',['HAL_MspInit',['../d8/df7/stm32f4xx__hal__msp_8c.html#ae4fb8e66865c87d0ebab74a726a6891f',1,'stm32f4xx_hal_msp.c']]],
-  ['hal_5fuart_5fmspdeinit_3',['HAL_UART_MspDeInit',['../d8/df7/stm32f4xx__hal__msp_8c.html#a718f39804e3b910d738a0e1e46151188',1,'stm32f4xx_hal_msp.c']]],
-  ['hal_5fuart_5fmspinit_4',['HAL_UART_MspInit',['../d8/df7/stm32f4xx__hal__msp_8c.html#a0e553b32211877322f949b14801bbfa7',1,'stm32f4xx_hal_msp.c']]],
-  ['hardfault_5fhandler_5',['HardFault_Handler',['../df/da1/stm32f4xx__it_8h.html#a2bffc10d5bd4106753b7c30e86903bea',1,'HardFault_Handler(void):&#160;stm32f4xx_it.c'],['../db/d79/stm32f4xx__it_8c.html#a2bffc10d5bd4106753b7c30e86903bea',1,'HardFault_Handler(void):&#160;stm32f4xx_it.c']]]
+  ['getid_0',['getId',['../db/d84/shares_8c.html#a7baad18ef67629ce7c050d5c4d93f1ee',1,'getId(Shares this):&#160;shares.c'],['../d3/d0b/shares_8h.html#a2e60c27411dfd225d993dbd7ba6f25f1',1,'getId(Shares):&#160;shares.c']]],
+  ['getname_1',['getName',['../d3/d0b/shares_8h.html#a25efc4860a28cd47e1087056f1ea0b78',1,'shares.h']]],
+  ['getprice_2',['getPrice',['../d3/d0b/shares_8h.html#a129f59b3cac7ca5327bead0a66414f44',1,'shares.h']]],
+  ['getsymbol_3',['getSymbol',['../d3/d0b/shares_8h.html#a1b5c684613f124798e317a4c9ac04770',1,'shares.h']]]
 ];

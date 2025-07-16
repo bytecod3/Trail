@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['environ_0',['environ',['../d5/d87/syscalls_8c.html#aa006daaf11f1e2e45a6ababaf463212b',1,'syscalls.c']]]
+  ['deleteshare_0',['DeleteShare',['../dc/d82/struct_s_h_a_r_e_s.html#ace67fca3e5befd15bd476603b142eefc',1,'SHARES']]]
 ];

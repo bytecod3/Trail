@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['tz_5fallocmodulecontext_5fs_0',['TZ_AllocModuleContext_S',['../d6/d3d/tz__context_8h.html#acd016f166bee549a0d3e970132e64a90',1,'tz_context.h']]],
-  ['tz_5ffreemodulecontext_5fs_1',['TZ_FreeModuleContext_S',['../d6/d3d/tz__context_8h.html#ac84f678fbe974f8b02c683e0b8046524',1,'tz_context.h']]],
-  ['tz_5finitcontextsystem_5fs_2',['TZ_InitContextSystem_S',['../d6/d3d/tz__context_8h.html#a926e2ec472535a6d2b8125be1a79e3c0',1,'tz_context.h']]],
-  ['tz_5floadcontext_5fs_3',['TZ_LoadContext_S',['../d6/d3d/tz__context_8h.html#a4748f6bcdd5fed279ac5a6cd7eca2689',1,'tz_context.h']]],
-  ['tz_5fstorecontext_5fs_4',['TZ_StoreContext_S',['../d6/d3d/tz__context_8h.html#ac106570f4905f82922fd335aeb08a1bf',1,'tz_context.h']]]
+  ['x_5fwifi_5fconnect_0',['x_wifi_connect',['../d5/db4/core_2esp32_2esp32-devkit-doit_2src_2main_8cpp.html#ae0b671939ec8c7ce56d818e1ebcd0414',1,'main.cpp']]],
+  ['x_5fwifi_5fstate_5fcallback_1',['x_wifi_state_callback',['../d5/db4/core_2esp32_2esp32-devkit-doit_2src_2main_8cpp.html#a31e0146ba88260db367ec8648ac503d8',1,'main.cpp']]]
 ];

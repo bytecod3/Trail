@@ -15,5 +15,6 @@
 #define GLOBALS_H
 
 #define WIFI_MONITOR_STACK_SIZE         1024    /*!< WIFI monitor stack size in words */
+#define WIFI_CONNECTION_TIMEOUT         300000  /*!< timeout for wifi connection - 5 min */
 
 #endif

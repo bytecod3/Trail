@@ -6,6 +6,8 @@ var main_8h =
     [ "BTN_LEFT_Pin", "d4/dbf/main_8h.html#ac9aa0faed55d78cf63545a4c09809594", null ],
     [ "BTN_OK_GPIO_Port", "d4/dbf/main_8h.html#a75891ca236d8355fd72d4dbbde12f3b5", null ],
     [ "BTN_OK_Pin", "d4/dbf/main_8h.html#ad2a7480976cc33d2cba34aa96977a934", null ],
+    [ "BTN_OKC11_GPIO_Port", "d4/dbf/main_8h.html#a07b36759f8ee68c030148c51c7b9b4e4", null ],
+    [ "BTN_OKC11_Pin", "d4/dbf/main_8h.html#a3397b52392e25c1218724237688334e5", null ],
     [ "BTN_RIGHT_GPIO_Port", "d4/dbf/main_8h.html#aeed48028c0fbbcb7ca3960ae5c38ed37", null ],
     [ "BTN_RIGHT_Pin", "d4/dbf/main_8h.html#af0c710dcb20ce8b8535e1e3fc2391e71", null ],
     [ "BTN_UP_GPIO_Port", "d4/dbf/main_8h.html#a12d66f01c16d1e0952849bd1b80f889f", null ],

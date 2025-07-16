@@ -13,6 +13,14 @@
  #ifndef FSM_H
  #define FSM_H
 
+ /**
+ * @brief Finite state machine states for WIFI connection system
+ * 
+ * This struct contains all the possible states that the WIFI subsystem can be in 
+ * at a given time during the operation of the device 
+ *  * 
+ * @typedef wifi_state_t
+ */
  typedef enum {
     STATE_WIFI_WAITING_PROVISION,               /*!< waiting for provision of credentials  */
     STATE_WIFI_CONNECTING,                      /*!< attempting wifi connection  */
@@ -20,6 +28,6 @@
     STATE_WIFI_CONNECTION_TIMEOUT,              /*!< wifi connection timeout */
     STATE_WIFI_CONNECTION_ERROR,                /*!< wifi could not connect due to error */
     STATE_WIFI_DISCONNECTED                     /*!< wifi disconnected for some reason - e.g out of range */
- } state_t;
+ } wifi_state_t;
 
  #endif

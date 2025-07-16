@@ -1,30 +1,4 @@
 var searchData=
 [
-  ['haint_0',['HAINT',['../de/d2f/struct_u_s_b___o_t_g___host_type_def.html#af3c15285d6f2efdf4890ea5b27258aca',1,'USB_OTG_HostTypeDef']]],
-  ['haintmsk_1',['HAINTMSK',['../de/d2f/struct_u_s_b___o_t_g___host_type_def.html#aa4ec75921a9699f77ee14f377e1b86dc',1,'USB_OTG_HostTypeDef']]],
-  ['hcchar_2',['HCCHAR',['../d0/de7/struct_u_s_b___o_t_g___host_channel_type_def.html#a6f1e046a654010fb0da5eec942fb9a8d',1,'USB_OTG_HostChannelTypeDef']]],
-  ['hcdma_3',['HCDMA',['../d0/de7/struct_u_s_b___o_t_g___host_channel_type_def.html#a4204a2dcbc14fb11d371fc45b9f3170f',1,'USB_OTG_HostChannelTypeDef']]],
-  ['hcfg_4',['HCFG',['../de/d2f/struct_u_s_b___o_t_g___host_type_def.html#ab44a72e139c005445aac54e866f7750f',1,'USB_OTG_HostTypeDef']]],
-  ['hcint_5',['HCINT',['../d0/de7/struct_u_s_b___o_t_g___host_channel_type_def.html#a6735bbd8fbc28f897f1b44df95f52873',1,'USB_OTG_HostChannelTypeDef']]],
-  ['hcintmsk_6',['HCINTMSK',['../d0/de7/struct_u_s_b___o_t_g___host_channel_type_def.html#a8edfae19390d323525449d2444e93984',1,'USB_OTG_HostChannelTypeDef']]],
-  ['hcsplt_7',['HCSPLT',['../d0/de7/struct_u_s_b___o_t_g___host_channel_type_def.html#a23b3abb27cf5acff0edc709c90e2e5cb',1,'USB_OTG_HostChannelTypeDef']]],
-  ['hctsiz_8',['HCTSIZ',['../d0/de7/struct_u_s_b___o_t_g___host_channel_type_def.html#a14cb8c8dbbafdef182c82c0493ca48ab',1,'USB_OTG_HostChannelTypeDef']]],
-  ['hdmarx_9',['hdmarx',['../d2/d17/struct_i2_c___handle_type_def.html#ad1778574d987009683c8120bd16aa9cf',1,'I2C_HandleTypeDef::hdmarx'],['../dd/d87/struct_____u_a_r_t___handle_type_def.html#aad7929af8d6acf108c85fe9c7b83c128',1,'__UART_HandleTypeDef::hdmarx']]],
-  ['hdmatx_10',['hdmatx',['../d2/d17/struct_i2_c___handle_type_def.html#adb4429cdf02e5564464a1517229826b6',1,'I2C_HandleTypeDef::hdmatx'],['../dd/d87/struct_____u_a_r_t___handle_type_def.html#afdedbb0ffa1d4bc145a01434d4794c92',1,'__UART_HandleTypeDef::hdmatx']]],
-  ['hfir_11',['HFIR',['../de/d2f/struct_u_s_b___o_t_g___host_type_def.html#a509fd299e7540892623954ea4dc1313c',1,'USB_OTG_HostTypeDef']]],
-  ['hfnum_12',['HFNUM',['../de/d2f/struct_u_s_b___o_t_g___host_type_def.html#ab4f17f7ef96cf4933e30b1950925c613',1,'USB_OTG_HostTypeDef']]],
-  ['hfsr_13',['HFSR',['../dc/df4/group___c_m_s_i_s__core___debug_functions.html#ga14ad254659362b9752c69afe3fd80934',1,'SCB_Type']]],
-  ['hi2c1_14',['hi2c1',['../d0/d29/main_8c.html#af7b2c26e44dadaaa798a5c3d82914ba7',1,'main.c']]],
-  ['hifcr_15',['HIFCR',['../d5/df6/struct_d_m_a___type_def.html#a1e4f50b935bab2520788ae936f2e55c1',1,'DMA_TypeDef']]],
-  ['hisr_16',['HISR',['../d5/df6/struct_d_m_a___type_def.html#a01a90a5fcd6459e10b81c0ab737dd2e3',1,'DMA_TypeDef']]],
-  ['hnptxsts_17',['HNPTXSTS',['../d0/d61/struct_u_s_b___o_t_g___global_type_def.html#a99c998f37e7a88a26f22defb10a1e83a',1,'USB_OTG_GlobalTypeDef']]],
-  ['hptxfsiz_18',['HPTXFSIZ',['../d0/d61/struct_u_s_b___o_t_g___global_type_def.html#ad50445f076f99e6b3d0cfb2643f40fac',1,'USB_OTG_GlobalTypeDef']]],
-  ['hptxsts_19',['HPTXSTS',['../de/d2f/struct_u_s_b___o_t_g___host_type_def.html#af095d2e3da9e07f63ed7da99276eaaca',1,'USB_OTG_HostTypeDef']]],
-  ['hsestate_20',['HSEState',['../da/df4/struct_r_c_c___osc_init_type_def.html#a7e05d6eec98ed8cdaba00ca3d167ff72',1,'RCC_OscInitTypeDef']]],
-  ['hsicalibrationvalue_21',['HSICalibrationValue',['../da/df4/struct_r_c_c___osc_init_type_def.html#a9b2e48e452d0c334f2b9473216064560',1,'RCC_OscInitTypeDef']]],
-  ['hsistate_22',['HSIState',['../da/df4/struct_r_c_c___osc_init_type_def.html#a39b62cae65fe7a251000354e5bba8cb6',1,'RCC_OscInitTypeDef']]],
-  ['htr_23',['HTR',['../dc/d6f/struct_a_d_c___type_def.html#a297ac2d83a1837bfdc0333474b977de0',1,'ADC_TypeDef']]],
-  ['huart1_24',['huart1',['../d0/d29/main_8c.html#a2cf715bef37f7e8ef385a30974a5f0d5',1,'main.c']]],
-  ['huart2_25',['huart2',['../d0/d29/main_8c.html#aa9479c261d65eecedd3d9582f7f0f89c',1,'main.c']]],
-  ['hwflowctl_26',['HwFlowCtl',['../d8/d85/struct_u_a_r_t___init_type_def.html#adbf4734130666b94201c6658464c1622',1,'UART_InitTypeDef']]]
+  ['next_0',['next',['../dc/d82/struct_s_h_a_r_e_s.html#af887e6de1967302266015249425a8e0c',1,'SHARES']]]
 ];

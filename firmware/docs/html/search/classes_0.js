@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['_5f_5fdma_5fhandletypedef_0',['__DMA_HandleTypeDef',['../d6/dbe/struct_____d_m_a___handle_type_def.html',1,'']]],
-  ['_5f_5fiar_5fu32_1',['__iar_u32',['../d5/df9/struct____iar__u32.html',1,'']]],
-  ['_5f_5fuart_5fhandletypedef_2',['__UART_HandleTypeDef',['../dd/d87/struct_____u_a_r_t___handle_type_def.html',1,'']]]
+  ['button_0',['Button',['../d2/d4a/struct_button.html',1,'']]]
 ];

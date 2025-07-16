@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['jdr1_0',['JDR1',['../dc/d6f/struct_a_d_c___type_def.html#ab4b0a79a9e4a9d5b0a24d7285cf55bdc',1,'ADC_TypeDef']]],
-  ['jdr2_1',['JDR2',['../dc/d6f/struct_a_d_c___type_def.html#a898b87cab4f099bcca981cc4c9318b51',1,'ADC_TypeDef']]],
-  ['jdr3_2',['JDR3',['../dc/d6f/struct_a_d_c___type_def.html#a40999cd0a255ef62b2340e2726695063',1,'ADC_TypeDef']]],
-  ['jdr4_3',['JDR4',['../dc/d6f/struct_a_d_c___type_def.html#abae6e9d688b16ef350878998f5e21c0b',1,'ADC_TypeDef']]],
-  ['jofr1_4',['JOFR1',['../dc/d6f/struct_a_d_c___type_def.html#aa005e656f528aaad28d70d61c9db9b81',1,'ADC_TypeDef']]],
-  ['jofr2_5',['JOFR2',['../dc/d6f/struct_a_d_c___type_def.html#aa20f76044c11042dde41c1060853fb82',1,'ADC_TypeDef']]],
-  ['jofr3_6',['JOFR3',['../dc/d6f/struct_a_d_c___type_def.html#ae9c78142f6edf8122384263878d09015',1,'ADC_TypeDef']]],
-  ['jofr4_7',['JOFR4',['../dc/d6f/struct_a_d_c___type_def.html#a92f5c1a5aaa8b286317f923482e09d35',1,'ADC_TypeDef']]],
-  ['jsqr_8',['JSQR',['../dc/d6f/struct_a_d_c___type_def.html#a5438a76a93ac1bd2526e92ef298dc193',1,'ADC_TypeDef']]]
+  ['setsharename_0',['SetShareName',['../dc/d82/struct_s_h_a_r_e_s.html#a9dd3126047542204366ab08f3413d4d7',1,'SHARES']]],
+  ['setshareprice_1',['SetSharePrice',['../dc/d82/struct_s_h_a_r_e_s.html#a06f29f9cbddc2243d83209ef472d7fd1',1,'SHARES']]],
+  ['setsharesymbol_2',['SetShareSymbol',['../dc/d82/struct_s_h_a_r_e_s.html#a1e791361323556d8b485906113be23b5',1,'SHARES']]],
+  ['shareid_3',['shareId',['../dc/d82/struct_s_h_a_r_e_s.html#a3a7f12e517e87e8cee13706d34bd1d89',1,'SHARES']]],
+  ['sharename_4',['shareName',['../dc/d82/struct_s_h_a_r_e_s.html#aaa5f2a6f7bdadbbabf23ff811842c195',1,'SHARES']]],
+  ['shareprice_5',['sharePrice',['../dc/d82/struct_s_h_a_r_e_s.html#aaf95b85f068e16584ff7e7a9d0dd4fde',1,'SHARES']]],
+  ['sharesymbol_6',['shareSymbol',['../dc/d82/struct_s_h_a_r_e_s.html#a36fd39ed2fa22fac963460539da324ff',1,'SHARES']]],
+  ['sm_5fstate_7',['sm_State',['../d5/db4/core_2esp32_2esp32-devkit-doit_2src_2main_8cpp.html#a3bb8b07849f75ef25cb541ef0919b315',1,'main.cpp']]],
+  ['systemcoreclock_8',['SystemCoreClock',['../d5/d04/group___s_t_m32_f4xx___system___private___variables.html#gaa3cd3e43291e81e795d642b79b6088e6',1,'system_stm32f4xx.c']]]
 ];

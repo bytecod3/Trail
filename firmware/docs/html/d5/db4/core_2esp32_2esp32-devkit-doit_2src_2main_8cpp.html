@@ -108,14 +108,19 @@ $(function(){initNavTree('d5/db4/core_2esp32_2esp32-devkit-doit_2src_2main_8cpp.
 <code>#include &quot;<a class="el" href="../../d5/d87/globals_8h_source.html">globals.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d6/d6f/_f_s_m_8h_source.html">FSM.h</a>&quot;</code><br />
 <code>#include &quot;esp_log.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../db/de3/wifi-config_8h_source.html">wifi-config.h</a>&quot;</code><br />
+<code>#include &lt;AsyncTCP.h&gt;</code><br />
+<code>#include &lt;ESPAsyncWebServer.h&gt;</code><br />
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a734bbab06e1a9fd2e5522db0221ff6e3" id="r_a734bbab06e1a9fd2e5522db0221ff6e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a734bbab06e1a9fd2e5522db0221ff6e3">BAUDRATE</a>&#160;&#160;&#160;115200</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae0b671939ec8c7ce56d818e1ebcd0414" id="r_ae0b671939ec8c7ce56d818e1ebcd0414"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0b671939ec8c7ce56d818e1ebcd0414">x_wifi_connect</a> (void *)</td></tr>
+<tr class="memitem:a31af1dfead50fbe55653fa26bf33cfda" id="r_a31af1dfead50fbe55653fa26bf33cfda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31af1dfead50fbe55653fa26bf33cfda">WIFI_web_server_not_found</a> (AsyncWebServerRequest *request)</td></tr>
+<tr class="memdesc:a31af1dfead50fbe55653fa26bf33cfda"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function runs if the web provisioning web server is not found.  <br /></td></tr>
+<tr class="memitem:a4c1a9b837d7a1184f82603b7c7c667bd" id="r_a4c1a9b837d7a1184f82603b7c7c667bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c1a9b837d7a1184f82603b7c7c667bd">WIFI_server_init</a> ()</td></tr>
+<tr class="memdesc:a4c1a9b837d7a1184f82603b7c7c667bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function initalizes the web server to use for WIFI provisioning to the device.  <br /></td></tr>
+<tr class="memitem:a70695fd56b8fa3d02cd813faf6326526" id="r_a70695fd56b8fa3d02cd813faf6326526"><td class="memItemLeft" align="right" valign="top">AsyncWebServer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70695fd56b8fa3d02cd813faf6326526">wifi_server</a> (<a class="el" href="../../d5/d87/globals_8h.html#afaa8d58efb6c6f14fb5642eef6f0f9c5">WIFI_SERVER_PORT</a>)</td></tr>
+<tr class="memitem:ab8d1308c4afd5dade38ce628b0b0b247" id="r_ab8d1308c4afd5dade38ce628b0b0b247"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8d1308c4afd5dade38ce628b0b0b247">x_wifi_connect</a> (void *pv_parameters)</td></tr>
+<tr class="memdesc:ab8d1308c4afd5dade38ce628b0b0b247"><td class="mdescLeft">&#160;</td><td class="mdescRight">WIFI connection task.  <br /></td></tr>
 <tr class="memitem:a31e0146ba88260db367ec8648ac503d8" id="r_a31e0146ba88260db367ec8648ac503d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31e0146ba88260db367ec8648ac503d8">x_wifi_state_callback</a> (void *)</td></tr>
 <tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d" id="r_a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
 <tr class="memitem:afe461d27b9c48d5921c00d521181f12f" id="r_afe461d27b9c48d5921c00d521181f12f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe461d27b9c48d5921c00d521181f12f">loop</a> ()</td></tr>
@@ -124,6 +129,10 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:a5a85b9c772bbeb480b209a3e6ea92b4c" id="r_a5a85b9c772bbeb480b209a3e6ea92b4c"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a85b9c772bbeb480b209a3e6ea92b4c">TAG</a> = &quot;WIFI_MONITOR&quot;</td></tr>
 <tr class="memitem:a3bb8b07849f75ef25cb541ef0919b315" id="r_a3bb8b07849f75ef25cb541ef0919b315"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d6f/_f_s_m_8h.html#a5f847547d1654ba6664de98abb0ee37c">wifi_state_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bb8b07849f75ef25cb541ef0919b315">sm_State</a> = <a class="el" href="../../d6/d6f/_f_s_m_8h.html#a5f847547d1654ba6664de98abb0ee37caef9dec4ce90acff959f251eede653986">STATE_WIFI_WAITING_PROVISION</a></td></tr>
+<tr class="memitem:a8d30ec8b337bfbe2574058b1cc1e0ca9" id="r_a8d30ec8b337bfbe2574058b1cc1e0ca9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d17/class_wifi_config.html">WifiConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d30ec8b337bfbe2574058b1cc1e0ca9">WifiProvisioner</a></td></tr>
+<tr class="memitem:a067c8545dbc25ea3d9886c06e28529a0" id="r_a067c8545dbc25ea3d9886c06e28529a0"><td class="memItemLeft" align="right" valign="top">const char wifi_server_index_html[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a067c8545dbc25ea3d9886c06e28529a0">PROGMEM</a></td></tr>
+<tr class="memitem:a45ea19e87f83a58920dff8eb2e10273b" id="r_a45ea19e87f83a58920dff8eb2e10273b"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45ea19e87f83a58920dff8eb2e10273b">provision_start_timer</a> = 0</td></tr>
+<tr class="memitem:a1e05b89c2693439ff0a5d619c94c6491" id="r_a1e05b89c2693439ff0a5d619c94c6491"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e05b89c2693439ff0a5d619c94c6491">wifi_connect_start_time</a> = 0</td></tr>
 <tr class="memitem:afa0ddd78872005af7de6fdf0105568d5" id="r_afa0ddd78872005af7de6fdf0105568d5"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa0ddd78872005af7de6fdf0105568d5">wifi_monitor_task_handle</a></td></tr>
 <tr class="memitem:a305a76d1d22953fca6e04bb8e0c25f43" id="r_a305a76d1d22953fca6e04bb8e0c25f43"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a305a76d1d22953fca6e04bb8e0c25f43">bluetooth_monitor_task_handle</a></td></tr>
 <tr class="memitem:abadc24dc4da5d28186d4a8a65e261349" id="r_abadc24dc4da5d28186d4a8a65e261349"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abadc24dc4da5d28186d4a8a65e261349">watchdog_timer_task_handle</a></td></tr>
@@ -135,22 +144,7 @@ Variables</h2></td></tr>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-07-11</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 </dd></dl>
-</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
-<a id="a734bbab06e1a9fd2e5522db0221ff6e3" name="a734bbab06e1a9fd2e5522db0221ff6e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a734bbab06e1a9fd2e5522db0221ff6e3">&#9670;&#160;</a></span>BAUDRATE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BAUDRATE&#160;&#160;&#160;115200</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="afe461d27b9c48d5921c00d521181f12f" name="afe461d27b9c48d5921c00d521181f12f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afe461d27b9c48d5921c00d521181f12f">&#9670;&#160;</a></span>loop()</h2>
 
@@ -186,8 +180,69 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ae0b671939ec8c7ce56d818e1ebcd0414" name="ae0b671939ec8c7ce56d818e1ebcd0414"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0b671939ec8c7ce56d818e1ebcd0414">&#9670;&#160;</a></span>x_wifi_connect()</h2>
+<a id="a70695fd56b8fa3d02cd813faf6326526" name="a70695fd56b8fa3d02cd813faf6326526"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70695fd56b8fa3d02cd813faf6326526">&#9670;&#160;</a></span>wifi_server()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AsyncWebServer wifi_server </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/d87/globals_8h.html#afaa8d58efb6c6f14fb5642eef6f0f9c5">WIFI_SERVER_PORT</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4c1a9b837d7a1184f82603b7c7c667bd" name="a4c1a9b837d7a1184f82603b7c7c667bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c1a9b837d7a1184f82603b7c7c667bd">&#9670;&#160;</a></span>WIFI_server_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WIFI_server_init </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function initalizes the web server to use for WIFI provisioning to the device. </p>
+
+</div>
+</div>
+<a id="a31af1dfead50fbe55653fa26bf33cfda" name="a31af1dfead50fbe55653fa26bf33cfda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31af1dfead50fbe55653fa26bf33cfda">&#9670;&#160;</a></span>WIFI_web_server_not_found()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WIFI_web_server_not_found </td>
+          <td>(</td>
+          <td class="paramtype">AsyncWebServerRequest *</td>          <td class="paramname"><span class="paramname"><em>request</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function runs if the web provisioning web server is not found. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>pointer to a AsyncWebServerRequest </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab8d1308c4afd5dade38ce628b0b0b247" name="ab8d1308c4afd5dade38ce628b0b0b247"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8d1308c4afd5dade38ce628b0b0b247">&#9670;&#160;</a></span>x_wifi_connect()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -200,6 +255,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>WIFI connection task. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pv_parameters</td><td></td></tr>
@@ -218,7 +275,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void x_wifi_state_callback </td>
           <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>pvParameters</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -235,6 +292,56 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">TaskHandle_t bluetooth_monitor_task_handle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a067c8545dbc25ea3d9886c06e28529a0" name="a067c8545dbc25ea3d9886c06e28529a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a067c8545dbc25ea3d9886c06e28529a0">&#9670;&#160;</a></span>PROGMEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char wifif_server_success_response [] PROGMEM</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= R<span class="stringliteral">&quot;rawliteral(</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">&lt;!DOCTYPE HTML&gt;</span></div>
+<div class="line"><span class="stringliteral">&lt;html&gt;</span></div>
+<div class="line"><span class="stringliteral">&lt;head&gt;</span></div>
+<div class="line"><span class="stringliteral">  &lt;title&gt;Trail Network Config&lt;/title&gt;</span></div>
+<div class="line"><span class="stringliteral">  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</span></div>
+<div class="line"><span class="stringliteral">  &lt;/head&gt;</span></div>
+<div class="line"><span class="stringliteral">    &lt;body&gt;</span></div>
+<div class="line"><span class="stringliteral">    &lt;h3&gt; Trail WiFi Configuration&lt;/h3&gt;</span></div>
+<div class="line"><span class="stringliteral">    &lt;form action=&quot;/get&quot;&gt;</span></div>
+<div class="line"><span class="stringliteral">        &lt;span&gt;WiFi SSID: &lt;/span&gt; &lt;input type=&quot;text&quot; name=&quot;wifi_ssid&quot;&gt; &lt;br&gt;&lt;br&gt;</span></div>
+<div class="line"><span class="stringliteral">        &lt;span&gt;WiFi Password: &lt;/span&gt; &lt;input type=&quot;text&quot; name=&quot;wifi_password&quot;&gt; &lt;br&gt;&lt;br&gt;</span></div>
+<div class="line"><span class="stringliteral">    &lt;input type=&quot;submit&quot; value=&quot;SAVE&quot;&gt;</span></div>
+<div class="line"><span class="stringliteral">    &lt;/form&gt;&lt;br&gt;</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">    &lt;/form&gt;&lt;br&gt;</span></div>
+<div class="line"><span class="stringliteral">&lt;/body&gt;</span></div>
+<div class="line"><span class="stringliteral">&lt;/html&gt;</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">)rawliteral&quot;</span></div>
+</div><!-- fragment --><p>Device Index Page </p>
+
+</div>
+</div>
+<a id="a45ea19e87f83a58920dff8eb2e10273b" name="a45ea19e87f83a58920dff8eb2e10273b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45ea19e87f83a58920dff8eb2e10273b">&#9670;&#160;</a></span>provision_start_timer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long provision_start_timer = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -291,6 +398,20 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a1e05b89c2693439ff0a5d619c94c6491" name="a1e05b89c2693439ff0a5d619c94c6491"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e05b89c2693439ff0a5d619c94c6491">&#9670;&#160;</a></span>wifi_connect_start_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long wifi_connect_start_time = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="afa0ddd78872005af7de6fdf0105568d5" name="afa0ddd78872005af7de6fdf0105568d5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afa0ddd78872005af7de6fdf0105568d5">&#9670;&#160;</a></span>wifi_monitor_task_handle</h2>
 
@@ -316,6 +437,21 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8d30ec8b337bfbe2574058b1cc1e0ca9" name="a8d30ec8b337bfbe2574058b1cc1e0ca9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d30ec8b337bfbe2574058b1cc1e0ca9">&#9670;&#160;</a></span>WifiProvisioner</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d17/class_wifi_config.html">WifiConfig</a> WifiProvisioner</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>to use for provisioning for WIFI </p>
 
 </div>
 </div>

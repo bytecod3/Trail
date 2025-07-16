@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['uart_5fstart_5freceive_5fdma_0',['UART_Start_Receive_DMA',['../df/d04/group___u_a_r_t___private___functions.html#ga3821d988f1d6feb39dc86ab5010d0a9c',1,'stm32f4xx_hal_uart.h']]],
-  ['uart_5fstart_5freceive_5fit_1',['UART_Start_Receive_IT',['../df/d04/group___u_a_r_t___private___functions.html#ga6629cec6016bd4dc0ea1bbce9e20898f',1,'stm32f4xx_hal_uart.h']]],
-  ['usagefault_5fhandler_2',['UsageFault_Handler',['../df/da1/stm32f4xx__it_8h.html#a1d98923de2ed6b7309b66f9ba2971647',1,'UsageFault_Handler(void):&#160;stm32f4xx_it.c'],['../db/d79/stm32f4xx__it_8c.html#a1d98923de2ed6b7309b66f9ba2971647',1,'UsageFault_Handler(void):&#160;stm32f4xx_it.c']]]
+  ['x_5fwifi_5fconnect_0',['x_wifi_connect',['../d5/db4/core_2esp32_2esp32-devkit-doit_2src_2main_8cpp.html#ab8d1308c4afd5dade38ce628b0b0b247',1,'main.cpp']]],
+  ['x_5fwifi_5fstate_5fcallback_1',['x_wifi_state_callback',['../d5/db4/core_2esp32_2esp32-devkit-doit_2src_2main_8cpp.html#a31e0146ba88260db367ec8648ac503d8',1,'main.cpp']]]
 ];

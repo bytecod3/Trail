@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['tft_5fgrey_0',['TFT_GREY',['../dc/dce/playground_2_e_s_p32-_i_l_i9488-_s_p_i-screen_2src_2main_8cpp.html#abe8b8b5cc8a44aa7c54efec2742fa5d0',1,'main.cpp']]],
-  ['tick_5fint_5fpriority_1',['TICK_INT_PRIORITY',['../d7/d74/stm32f4xx__hal__conf_8h.html#ae27809d4959b9fd5b5d974e3e1c77d2e',1,'stm32f4xx_hal_conf.h']]]
+  ['size_5fof_5fwifi_5fstate_5fqueue_0',['SIZE_OF_WIFI_STATE_QUEUE',['../d5/d87/globals_8h.html#a0502a3eef39de47590641915bde12de9',1,'globals.h']]],
+  ['swclk_5fgpio_5fport_1',['SWCLK_GPIO_Port',['../d4/dbf/main_8h.html#a54d419ccaa2653d1bceae3f1a7206890',1,'main.h']]],
+  ['swclk_5fpin_2',['SWCLK_Pin',['../d4/dbf/main_8h.html#ad2e9165c92edc48968db01ca88c27822',1,'main.h']]],
+  ['swdio_5fgpio_5fport_3',['SWDIO_GPIO_Port',['../d4/dbf/main_8h.html#a0d6c5c9d267a552e5bb02eb57498f683',1,'main.h']]],
+  ['swdio_5fpin_4',['SWDIO_Pin',['../d4/dbf/main_8h.html#ac30893c7c5dd78cf02632dc653c3e74e',1,'main.h']]]
 ];

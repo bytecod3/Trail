@@ -32,7 +32,7 @@
   <td id="projectalign">
    <div id="projectname">Trail<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">Firmware Docs for Trail Hiking Navigation Device</div>
+   <div id="projectbrief">Firmware docs for Trail, an outdoor rugged navigation device</div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -108,16 +108,23 @@ $(function(){initNavTree('d6/d6f/_f_s_m_8h.html','../../',''); });
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:a5f847547d1654ba6664de98abb0ee37c" id="r_a5f847547d1654ba6664de98abb0ee37c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f847547d1654ba6664de98abb0ee37c">wifi_state_t</a> { <br />
-&#160;&#160;<a class="el" href="#a5f847547d1654ba6664de98abb0ee37caef9dec4ce90acff959f251eede653986">STATE_WIFI_WAITING_PROVISION</a>
+&#160;&#160;<a class="el" href="#a5f847547d1654ba6664de98abb0ee37caf4085665d5f95b095fe4aa0e05c7295e">STATE_WIFI_PROVISION_REQUEST</a>
+, <a class="el" href="#a5f847547d1654ba6664de98abb0ee37caef9dec4ce90acff959f251eede653986">STATE_WIFI_WAITING_PROVISION</a>
+, <a class="el" href="#a5f847547d1654ba6664de98abb0ee37ca9620bb950d91ea70d2c5015fbc39dbc7">STATE_WIFI_PROVISION_TIMEOUT</a>
 , <a class="el" href="#a5f847547d1654ba6664de98abb0ee37cac0f1a57ec19b589a9479429f445ecefb">STATE_WIFI_CONNECTING</a>
-, <a class="el" href="#a5f847547d1654ba6664de98abb0ee37caab1618012cfead98df0fe39ed5fe1203">STATE_WIFI_CONNECTED</a>
-, <a class="el" href="#a5f847547d1654ba6664de98abb0ee37cad5453faadc208d7aa87c7d0d54db3eaf">STATE_WIFI_CONNECTION_TIMEOUT</a>
 , <br />
-&#160;&#160;<a class="el" href="#a5f847547d1654ba6664de98abb0ee37ca23939655648d27f162c232d827fd95ca">STATE_WIFI_CONNECTION_ERROR</a>
+&#160;&#160;<a class="el" href="#a5f847547d1654ba6664de98abb0ee37caab1618012cfead98df0fe39ed5fe1203">STATE_WIFI_CONNECTED</a>
+, <a class="el" href="#a5f847547d1654ba6664de98abb0ee37cad5453faadc208d7aa87c7d0d54db3eaf">STATE_WIFI_CONNECTION_TIMEOUT</a>
+, <a class="el" href="#a5f847547d1654ba6664de98abb0ee37ca23939655648d27f162c232d827fd95ca">STATE_WIFI_CONNECTION_ERROR</a>
 , <a class="el" href="#a5f847547d1654ba6664de98abb0ee37ca54a3435fcc191de953e214b1526d1ec7">STATE_WIFI_DISCONNECTED</a>
 <br />
  }</td></tr>
 <tr class="memdesc:a5f847547d1654ba6664de98abb0ee37c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finite state machine states for WIFI connection system.  <a href="#a5f847547d1654ba6664de98abb0ee37c">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a5b75ae629882f28fbf6cdc8d3c3d18fb" id="r_a5b75ae629882f28fbf6cdc8d3c3d18fb"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b75ae629882f28fbf6cdc8d3c3d18fb">convert_state_to_str</a> (<a class="el" href="#a5f847547d1654ba6664de98abb0ee37c">wifi_state_t</a>)</td></tr>
+<tr class="memdesc:a5b75ae629882f28fbf6cdc8d3c3d18fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns the state's name as a readable string instead of just an int.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This file declares the Finite State Machine. </p>
@@ -143,19 +150,45 @@ Enumerations</h2></td></tr>
 <li></li>
 </ul>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a5f847547d1654ba6664de98abb0ee37caef9dec4ce90acff959f251eede653986" name="a5f847547d1654ba6664de98abb0ee37caef9dec4ce90acff959f251eede653986"></a>STATE_WIFI_WAITING_PROVISION&#160;</td><td class="fielddoc"><p>waiting for provision of credentials </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a5f847547d1654ba6664de98abb0ee37caf4085665d5f95b095fe4aa0e05c7295e" name="a5f847547d1654ba6664de98abb0ee37caf4085665d5f95b095fe4aa0e05c7295e"></a>STATE_WIFI_PROVISION_REQUEST&#160;</td><td class="fielddoc"><p>send a request to connect to WIFI </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5f847547d1654ba6664de98abb0ee37caef9dec4ce90acff959f251eede653986" name="a5f847547d1654ba6664de98abb0ee37caef9dec4ce90acff959f251eede653986"></a>STATE_WIFI_WAITING_PROVISION&#160;</td><td class="fielddoc"><p>waiting for provision of wifi credentials </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5f847547d1654ba6664de98abb0ee37ca9620bb950d91ea70d2c5015fbc39dbc7" name="a5f847547d1654ba6664de98abb0ee37ca9620bb950d91ea70d2c5015fbc39dbc7"></a>STATE_WIFI_PROVISION_TIMEOUT&#160;</td><td class="fielddoc"><p>waited too long for credentials </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a5f847547d1654ba6664de98abb0ee37cac0f1a57ec19b589a9479429f445ecefb" name="a5f847547d1654ba6664de98abb0ee37cac0f1a57ec19b589a9479429f445ecefb"></a>STATE_WIFI_CONNECTING&#160;</td><td class="fielddoc"><p>attempting wifi connection </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a5f847547d1654ba6664de98abb0ee37caab1618012cfead98df0fe39ed5fe1203" name="a5f847547d1654ba6664de98abb0ee37caab1618012cfead98df0fe39ed5fe1203"></a>STATE_WIFI_CONNECTED&#160;</td><td class="fielddoc"><p>wifi connected </p>
+<tr><td class="fieldname"><a id="a5f847547d1654ba6664de98abb0ee37caab1618012cfead98df0fe39ed5fe1203" name="a5f847547d1654ba6664de98abb0ee37caab1618012cfead98df0fe39ed5fe1203"></a>STATE_WIFI_CONNECTED&#160;</td><td class="fielddoc"><p>WIFI connected </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a5f847547d1654ba6664de98abb0ee37cad5453faadc208d7aa87c7d0d54db3eaf" name="a5f847547d1654ba6664de98abb0ee37cad5453faadc208d7aa87c7d0d54db3eaf"></a>STATE_WIFI_CONNECTION_TIMEOUT&#160;</td><td class="fielddoc"><p>wifi connection timeout </p>
+<tr><td class="fieldname"><a id="a5f847547d1654ba6664de98abb0ee37cad5453faadc208d7aa87c7d0d54db3eaf" name="a5f847547d1654ba6664de98abb0ee37cad5453faadc208d7aa87c7d0d54db3eaf"></a>STATE_WIFI_CONNECTION_TIMEOUT&#160;</td><td class="fielddoc"><p>WIFI connection timeout </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a5f847547d1654ba6664de98abb0ee37ca23939655648d27f162c232d827fd95ca" name="a5f847547d1654ba6664de98abb0ee37ca23939655648d27f162c232d827fd95ca"></a>STATE_WIFI_CONNECTION_ERROR&#160;</td><td class="fielddoc"><p>wifi could not connect due to error </p>
+<tr><td class="fieldname"><a id="a5f847547d1654ba6664de98abb0ee37ca23939655648d27f162c232d827fd95ca" name="a5f847547d1654ba6664de98abb0ee37ca23939655648d27f162c232d827fd95ca"></a>STATE_WIFI_CONNECTION_ERROR&#160;</td><td class="fielddoc"><p>WIFI could not connect due to error </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a5f847547d1654ba6664de98abb0ee37ca54a3435fcc191de953e214b1526d1ec7" name="a5f847547d1654ba6664de98abb0ee37ca54a3435fcc191de953e214b1526d1ec7"></a>STATE_WIFI_DISCONNECTED&#160;</td><td class="fielddoc"><p>wifi disconnected for some reason - e.g out of range </p>
+<tr><td class="fieldname"><a id="a5f847547d1654ba6664de98abb0ee37ca54a3435fcc191de953e214b1526d1ec7" name="a5f847547d1654ba6664de98abb0ee37ca54a3435fcc191de953e214b1526d1ec7"></a>STATE_WIFI_DISCONNECTED&#160;</td><td class="fielddoc"><p>WIFI disconnected for some reason - e.g out of range </p>
 </td></tr>
 </table>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a5b75ae629882f28fbf6cdc8d3c3d18fb" name="a5b75ae629882f28fbf6cdc8d3c3d18fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b75ae629882f28fbf6cdc8d3c3d18fb">&#9670;&#160;</a></span>convert_state_to_str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * convert_state_to_str </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5f847547d1654ba6664de98abb0ee37c">wifi_state_t</a></td>          <td class="paramname"><span class="paramname"><em>state</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function returns the state's name as a readable string instead of just an int. </p>
+<p>FSM utility functions </p>
+<dl class="section return"><dt>Returns</dt><dd>const char* </dd></dl>
 
 </div>
 </div>

@@ -27,6 +27,5 @@ var searchData=
   ['prefetch_5fenable_24',['PREFETCH_ENABLE',['../d7/d74/stm32f4xx__hal__conf_8h.html#a13fc0d5e7bb925385c0cc0772ba6a391',1,'stm32f4xx_hal_conf.h']]],
   ['printshare_25',['PrintShare',['../dc/d82/struct_s_h_a_r_e_s.html#a323759ffc69fc23954cffdec4c8478b3',1,'SHARES']]],
   ['printshare_26',['printShare',['../d3/d0b/shares_8h.html#a29dd8460927670d257f8db8fe499fc01',1,'shares.h']]],
-  ['progmem_27',['PROGMEM',['../d5/db4/core_2esp32_2esp32-devkit-doit_2src_2main_8cpp.html#a067c8545dbc25ea3d9886c06e28529a0',1,'main.cpp']]],
-  ['provision_5fstart_5ftimer_28',['provision_start_timer',['../d5/db4/core_2esp32_2esp32-devkit-doit_2src_2main_8cpp.html#a45ea19e87f83a58920dff8eb2e10273b',1,'main.cpp']]]
+  ['progmem_27',['PROGMEM',['../d5/db4/core_2esp32_2esp32-devkit-doit_2src_2main_8cpp.html#a067c8545dbc25ea3d9886c06e28529a0',1,'main.cpp']]]
 ];

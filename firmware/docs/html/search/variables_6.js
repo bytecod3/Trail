@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['getshareid_0',['GetShareId',['../dc/d82/struct_s_h_a_r_e_s.html#abf756bd166f69dc94c3dadf90d196346',1,'SHARES']]],
-  ['getshareprice_1',['GetSharePrice',['../dc/d82/struct_s_h_a_r_e_s.html#a9070685fb765b7165e85f1ccd922eef7',1,'SHARES']]],
-  ['getsharesymbol_2',['GetShareSymbol',['../dc/d82/struct_s_h_a_r_e_s.html#a83e13265521645c1e595ec4c94df5760',1,'SHARES']]]
+  ['file_5fdata_5fbuffer_0',['file_data_buffer',['../dd/d8b/files_8cpp.html#a8cfa7c405e21a42d81fd5921249144b3',1,'files.cpp']]],
+  ['func_1',['func',['../d2/d4a/struct_button.html#a0713da60c6b3d150390403ce79a44bc6',1,'Button']]]
 ];

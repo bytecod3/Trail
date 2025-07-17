@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['main_0',['main',['../d1/d7d/core_2stm32_2trail-firmware-stm32_2_core_2_src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main.c']]],
-  ['memmanage_5fhandler_1',['MemManage_Handler',['../df/da1/stm32f4xx__it_8h.html#a3150f74512510287a942624aa9b44cc5',1,'MemManage_Handler(void):&#160;stm32f4xx_it.c'],['../db/d79/stm32f4xx__it_8c.html#a3150f74512510287a942624aa9b44cc5',1,'MemManage_Handler(void):&#160;stm32f4xx_it.c']]],
-  ['mx_5fgpio_5finit_2',['MX_GPIO_Init',['../d1/d7d/core_2stm32_2trail-firmware-stm32_2_core_2_src_2main_8c.html#ae89fdd15729ad41a66911190fcbab23a',1,'main.c']]],
-  ['mx_5fi2c1_5finit_3',['MX_I2C1_Init',['../d1/d7d/core_2stm32_2trail-firmware-stm32_2_core_2_src_2main_8c.html#a4230d11f81d0b16e112f1cc3f40cb42f',1,'main.c']]],
-  ['mx_5fusart1_5fuart_5finit_4',['MX_USART1_UART_Init',['../d1/d7d/core_2stm32_2trail-firmware-stm32_2_core_2_src_2main_8c.html#a62f4b77e20bccafe98a183771749c20c',1,'main.c']]],
-  ['mx_5fusart2_5fuart_5finit_5',['MX_USART2_UART_Init',['../d1/d7d/core_2stm32_2trail-firmware-stm32_2_core_2_src_2main_8c.html#a6db1014d713f6f5c0f52a13299ee0733',1,'main.c']]]
+  ['hal_5fi2c_5fmspdeinit_0',['HAL_I2C_MspDeInit',['../d8/df7/stm32f4xx__hal__msp_8c.html#a2ec8d9b09854c732e2feed549278f048',1,'stm32f4xx_hal_msp.c']]],
+  ['hal_5fi2c_5fmspinit_1',['HAL_I2C_MspInit',['../d8/df7/stm32f4xx__hal__msp_8c.html#abe01a202c27b23fc150aa66af3130073',1,'stm32f4xx_hal_msp.c']]],
+  ['hal_5fmspinit_2',['HAL_MspInit',['../d8/df7/stm32f4xx__hal__msp_8c.html#ae4fb8e66865c87d0ebab74a726a6891f',1,'stm32f4xx_hal_msp.c']]],
+  ['hal_5fuart_5fmspdeinit_3',['HAL_UART_MspDeInit',['../d8/df7/stm32f4xx__hal__msp_8c.html#a718f39804e3b910d738a0e1e46151188',1,'stm32f4xx_hal_msp.c']]],
+  ['hal_5fuart_5fmspinit_4',['HAL_UART_MspInit',['../d8/df7/stm32f4xx__hal__msp_8c.html#a0e553b32211877322f949b14801bbfa7',1,'stm32f4xx_hal_msp.c']]],
+  ['hardfault_5fhandler_5',['HardFault_Handler',['../df/da1/stm32f4xx__it_8h.html#a2bffc10d5bd4106753b7c30e86903bea',1,'HardFault_Handler(void):&#160;stm32f4xx_it.c'],['../db/d79/stm32f4xx__it_8c.html#a2bffc10d5bd4106753b7c30e86903bea',1,'HardFault_Handler(void):&#160;stm32f4xx_it.c']]]
 ];

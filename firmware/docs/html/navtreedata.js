@@ -53,7 +53,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d7/d74/stm32f4xx__hal__conf_8h_source.html"
+"d7/d74/stm32f4xx__hal__conf_8h.html#ad3fd64734f71ef9c872f38dd0d0b8cb0"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

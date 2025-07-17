@@ -1,4 +1,3 @@
-
 /**
  * @file FSM.h
  * @author Edwin Mwiti (emwiti658@gmail.com)
@@ -31,5 +30,15 @@
     STATE_WIFI_CONNECTION_ERROR,                /*!< WIFI could not connect due to error */
     STATE_WIFI_DISCONNECTED                     /*!< WIFI disconnected for some reason - e.g out of range */
  } wifi_state_t;
+
+
+ /** FSM utility functions  */
+
+ /**
+  * @brief This function returns the state's name as a readable string instead of just an int
+  * 
+  * @return const char* 
+  */
+ const char* convert_state_to_str(wifi_state_t);
 
  #endif

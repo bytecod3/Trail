@@ -135,11 +135,12 @@ unsigned long wifi_connect_start_time = 0;
 
 /* task handles */
 TaskHandle_t wifi_monitor_task_handle;
+TaskHandle_t get_state_from_queue_task_handle;
 TaskHandle_t bluetooth_monitor_task_handle;
 TaskHandle_t watchdog_timer_task_handle;
 
 /* message queue */
-QueueHandle_t wifi_status_queue_handle;
+QueueHandle_t wifi_state_queue_handle;
 
 /* Tasks function prototypes */
 void x_wifi_connect(void *);
@@ -255,7 +256,6 @@ void x_wifi_connect(void* pv_parameters) {
 
             case STATE_WIFI_WAITING_PROVISION:
                 
-
                 /* check for provision timeout */
                 if( (millis() - wifi_provision_start_timer) >= WIFI_CONNECTION_TIMEOUT) {
                     sm_state = STATE_WIFI_PROVISION_TIMEOUT;
@@ -266,9 +266,12 @@ void x_wifi_connect(void* pv_parameters) {
             default:
                 break;
         }
-        
 
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        /* send the current state to queue even if it is global */
+        // todo: check return type from QUEUE send 
+        xQueueSend(wifi_state_queue_handle, &sm_state, portMAX_DELAY);
+
+        vTaskDelay(1 / portTICK_PERIOD_MS);
     }
 }
 
@@ -276,6 +279,25 @@ void x_wifi_state_callback(void* pvParameters) {
     for (;;) {
         vTaskDelay(pdMS_TO_TICKS(200));
     }
+}
+
+
+/**
+ * 
+ * @brief This function fetches the current state from the wifi_state_queue and converts it to a readable string 
+ * 
+ */
+void x_get_state_from_queue(void* pvParameters) {
+    wifi_state_t rcvd_state;
+
+    for (;;) {
+        xQueueReceive(wifi_state_queue_handle, &rcvd_state, portMAX_DELAY);
+
+        #if DEBUG
+            ESP_LOGI(TAG, "current state: %s", convert_state_to_str(rcvd_state));
+        #endif
+    }
+    
 }
 
 void setup() {
@@ -292,28 +314,53 @@ void setup() {
     file_operations_init();
 
     /**
+     * 
+     * Create queues
+     * 
+     */
+    wifi_state_queue_handle = xQueueCreate(SIZE_OF_WIFI_STATE_QUEUE, sizeof(wifi_state_t));
+    if (wifi_state_queue_handle != NULL) {
+        #if DEBUG
+            ESP_LOGI(TAG, "wifi_state_queue created OK.");
+        #endif
+    } else {
+        #if DEBUG
+            ESP_LOGI(TAG, "wifi_state_queue failed to create.");
+        #endif
+    }
+
+    /**
      * Create tasks 
      * 
      */
     #if DEBUG 
         ESP_LOGI(TAG, "Creating tasks...");
     #endif
-    // uint8_t app_core_id = 1;
-    // BaseType_t res = xTaskCreatePinnedToCore(x_wifi_connect, "x_wifi_connect", WIFI_MONITOR_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, &wifi_monitor_task_handle, app_core_id);
 
-    // if(res == pdPASS) {
-    //     ESP_LOGI(TAG, "x_wifi_connect task created OK.");
-    // } else {
-    //     ESP_LOGE(TAG, "x_wifi_connect task creation failed.");
-    // }
+    uint8_t app_core_id = 1;
 
-    // res = xTaskCreatePinnedToCore(x_wifi_connect, "x_wifi_connect", WIFI_MONITOR_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, &wifi_monitor_task_handle, app_core_id);
+    BaseType_t res = xTaskCreatePinnedToCore(x_wifi_connect, "x_wifi_connect", WIFI_MONITOR_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, &wifi_monitor_task_handle, app_core_id);
+    if(res == pdPASS) {
+        #if DEBUG 
+            ESP_LOGI(TAG, "x_wifi_connect task created OK.");
+        #endif
+    } else {
+        #if DEBUG
+            ESP_LOGE(TAG, "x_wifi_connect task creation failed.");
+        #endif
+    }
 
-    // if(res == pdPASS) {
-    //     ESP_LOGI(TAG, "x_wifi_connect task created OK.");
-    // } else {
-    //     ESP_LOGE(TAG, "x_wifi_connect task creation failed.");
-    // }
+    res = xTaskCreatePinnedToCore(x_get_state_from_queue, "x_get_state_from_queue", WIFI_MONITOR_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, &get_state_from_queue_task_handle, app_core_id);
+    if(res == pdPASS) {
+        #if DEBUG
+            ESP_LOGI(TAG, "x_get_state_from_queue task created OK.");
+        #endif
+    } else {
+        #if DEBUG
+            ESP_LOGE(TAG, "x_get_state_from_queue task creation failed.");
+        #endif
+    }
+
 
 }
 

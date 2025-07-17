@@ -22,12 +22,14 @@
  * @typedef wifi_state_t
  */
  typedef enum {
-    STATE_WIFI_WAITING_PROVISION,               /*!< waiting for provision of credentials  */
+    STATE_WIFI_PROVISION_REQUEST,               /*!< send a request to connect to WIFI */
+    STATE_WIFI_WAITING_PROVISION,               /*!< waiting for provision of wifi credentials  */
+    STATE_WIFI_PROVISION_TIMEOUT,               /*!< waited too long for credentials */
     STATE_WIFI_CONNECTING,                      /*!< attempting wifi connection  */
-    STATE_WIFI_CONNECTED,                       /*!< wifi connected */
-    STATE_WIFI_CONNECTION_TIMEOUT,              /*!< wifi connection timeout */
-    STATE_WIFI_CONNECTION_ERROR,                /*!< wifi could not connect due to error */
-    STATE_WIFI_DISCONNECTED                     /*!< wifi disconnected for some reason - e.g out of range */
+    STATE_WIFI_CONNECTED,                       /*!< WIFI connected */
+    STATE_WIFI_CONNECTION_TIMEOUT,              /*!< WIFI connection timeout */
+    STATE_WIFI_CONNECTION_ERROR,                /*!< WIFI could not connect due to error */
+    STATE_WIFI_DISCONNECTED                     /*!< WIFI disconnected for some reason - e.g out of range */
  } wifi_state_t;
 
  #endif

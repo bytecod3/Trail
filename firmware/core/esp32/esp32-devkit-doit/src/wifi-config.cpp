@@ -1,8 +1,8 @@
 
 /**
- * @file: wifi-config.cpp
+ * @file wifi-config.cpp
  * @author Edwin Mwiti (emwiti658@gmail.com)
- * @brief: Implements Wifi connection functions
+ * @brief Implements Wifi connection functions
  * @version 0.1
  * @date 2025-07-16
  * 
@@ -122,7 +122,7 @@ bool WifiConfig::WIFI_create_AP()
             Serial.print("[+]AP created with SSID: "); Serial.println(this->WIFI_get_STA_name());
             Serial.print("[+]AP created with IP: "); Serial.println(WiFi.softAPIP());
         #endif
-        
+
         return true;
     } else {
         return false;

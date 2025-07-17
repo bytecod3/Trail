@@ -1,7 +1,7 @@
  /**
  * @file wifi-config.h
  * @author Edwin Mwiti (emwiti658@gmail.com)
- * @brief: This file implements headers for Wifi provisioning
+ * @brief This file implements headers for Wifi provisioning
  * @version 0.1
  * @date 2025-07-16
  * 

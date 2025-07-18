@@ -105,6 +105,11 @@ void JSON_file_create(const String WIFI_name, const String WIFI_password) {
 void WIFI_server_init() {
     // set handlers
     // todo: use const char variables for URLs
+
+    #if DEBUG
+        ESP_LOGI(TAG, "Initializing web server...");
+    #endif
+
     wifi_server.on("/network", HTTP_GET, [](AsyncWebServerRequest *request){
         request->send(200, "text/html", wifi_server_index_html);
     });
@@ -126,7 +131,7 @@ void WIFI_server_init() {
             }
         }
 
-        if(request->hasParam("wifi_password")) { // Wi-Fi password
+        if(request->hasParam("wifi_password")) { /* Wi-Fi password */
             config_wifi_psd = request->getParam("wifi_password")->value();
 
             if (config_wifi_psd != "") {
@@ -140,13 +145,16 @@ void WIFI_server_init() {
         /* crdentials have been saved here, so update the saved bit */
         credentials_saved = 1;
 
-        // JsonDocument doc;
-        // readFile(LittleFS, config_file_path);
-        // deserializeJson(doc, file_data_buffer);
-        // doc["wifi_configured"] = credentials_saved;
+        JsonDocument doc;
+        readFile(LittleFS, config_file_path);
+        deserializeJson(doc, file_data_buffer);
+        doc["wifi_configured"] = credentials_saved;
+
+        char wifi_config_string[32];
+        serializeJson(doc, wifi_config_string);
+        writeFile(LittleFS, config_file_path, wifi_config_string);
 
         // todo: update screen
-
 
         request->send(200, "text/html", wifif_server_success_response);
     });
@@ -154,6 +162,7 @@ void WIFI_server_init() {
     // begin server
     wifi_server.onNotFound(WIFI_web_server_not_found);
     wifi_server.begin();
+     ESP_LOGI(TAG, "Provisioning server started, waiting for config parameters...");
 
 }
 
@@ -248,7 +257,7 @@ void file_operations_init() {
                 ESP_LOGI(TAG, "config.ini file does not exist, creating file...");
             #endif
 
-            writeFile(LittleFS, config_file_path, "OK"); /* just to initialize the file with some data */
+            writeFile(LittleFS, config_file_path, ""); /* just to initialize the file */
 
             #if DEBUG
                  ESP_LOGI(TAG, "config.ini file created");
@@ -271,6 +280,41 @@ void file_operations_init() {
             #if DEBUG
                 ESP_LOGI(TAG, "config file contents: %s", file_data_buffer);
             #endif
+
+            if(strcmp(file_data_buffer, "") == 0) {
+                #if DEBUG
+                    ESP_LOGI(TAG, "WIFI configured bit does not exist");
+                #endif
+
+                /* create wifi configuration bit */
+                JsonDocument doc;
+                doc["wifi_configured"] = 0;
+                char wifi_configured_string[50];
+                serializeJson(doc, wifi_configured_string);
+                writeFile(LittleFS, config_file_path, wifi_configured_string);
+
+                /* change state */
+                sm_state = STATE_WIFI_PROVISION_REQUEST;
+            } else {
+                /* here the wifi_config bit exists */
+                #if DEBUG
+                    ESP_LOGI(TAG, "WIFI config bit exists");
+                #endif
+
+                JsonDocument doc;
+                uint8_t wifi_conf_check_bit;
+                readFile(LittleFS, config_file_path);
+                deserializeJson(doc, file_data_buffer);
+                wifi_conf_check_bit = doc["wifi_configured"];
+
+                if(wifi_conf_check_bit == 0) {
+                    sm_state = STATE_WIFI_PROVISION_REQUEST;
+                } else {
+                    sm_state = STATE_WIFI_CONNECT;
+                }
+
+
+            }
              
         }
     }
@@ -296,10 +340,18 @@ void x_wifi_connect(void* pv_parameters) {
                 break;
 
             case STATE_WIFI_WAITING_PROVISION:
-                
-                /* check for provision timeout */
-                if( (millis() - wifi_provision_start_timer) >= WIFI_CONNECTION_TIMEOUT) {
-                    sm_state = STATE_WIFI_PROVISION_TIMEOUT;
+
+                if(credentials_saved) {
+                    #if DEBUG
+                        ESP_LOGI(TAG, "Credentials exist. Connecting...");
+                    #endif
+
+                    sm_state = STATE_WIFI_CONNECT;
+                } else {
+                    /* check for provision timeout */
+                    if( (millis() - wifi_provision_start_timer) >= WIFI_CONNECTION_TIMEOUT) {
+                        sm_state = STATE_WIFI_PROVISION_TIMEOUT;
+                    }
                 }
 
                 break;

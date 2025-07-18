@@ -24,6 +24,7 @@
     STATE_WIFI_PROVISION_REQUEST,               /*!< send a request to connect to WIFI */
     STATE_WIFI_WAITING_PROVISION,               /*!< waiting for provision of wifi credentials  */
     STATE_WIFI_PROVISION_TIMEOUT,               /*!< waited too long for credentials */
+    STATE_WIFI_CONNECT,                         /*!< start connecting to WIFI */
     STATE_WIFI_CONNECTING,                      /*!< attempting wifi connection  */
     STATE_WIFI_CONNECTED,                       /*!< WIFI connected */
     STATE_WIFI_CONNECTION_TIMEOUT,              /*!< WIFI connection timeout */

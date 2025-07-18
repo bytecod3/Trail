@@ -18,7 +18,6 @@ const char* wificonfig_folder_path = "/wificonfig";
 const char* config_file_path = "/wificonfig/config.ini";
 const char* saved_networks_file_path = "/wificonfig/saved_networks.ini";
 
-
 char file_data_buffer[256];
 
 void listDir(fs::FS &fs, const char *dirname, uint8_t levels) {

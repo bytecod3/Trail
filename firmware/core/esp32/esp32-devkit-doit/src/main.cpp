@@ -18,8 +18,9 @@
 #include "wifi-config.h"
 #include "files.h"
 #include "config.h"
-#include <AsyncTCP.h>
-#include <ESPAsyncWebServer.h>
+#include "AsyncTCP.h"
+#include "ESPAsyncWebServer.h"
+#include "ArduinoJson.h"
 
 
 /* function prototypes */
@@ -34,6 +35,13 @@ wifi_state_t sm_state = STATE_WIFI_PROVISION_REQUEST;
 /* wifi provisioning */
 WifiConfig WifiProvisioner;     /*!< to use for provisioning for WIFI */
 AsyncWebServer wifi_server(WIFI_SERVER_PORT);
+
+/**
+ * JSON file variables 
+ * 
+ */
+JsonDocument wifi_config_doc;
+uint8_t credentials_saved = 0;
 
 
 /**
@@ -73,6 +81,23 @@ const char wifif_server_success_response[] PROGMEM = R"rawliteral(
 </html>
 )rawliteral";
 
+uint64_t ESP_get_id() {
+    return ESP.getEfuseMac();
+}
+
+void JSON_file_create(const String WIFI_name, const String WIFI_password) {
+    wifi_config_doc["device_id"] = ESP_get_id();
+    wifi_config_doc["wifi_name"] = WIFI_name;
+    wifi_config_doc["wifi_password"] = WIFI_password;
+
+    
+    char wifi_config_json_string[128];
+    serializeJson(wifi_config_doc, wifi_config_json_string);
+
+    writeFile(LittleFS, saved_networks_file_path, wifi_config_json_string);
+
+}
+
 /**
  * @brief This function initalizes the web server to use for WIFI provisioning to the device 
  * 
@@ -108,6 +133,20 @@ void WIFI_server_init() {
                 inputParam = config_wifi_psd;
             }
         }
+
+        /* save credentials to memory */
+        JSON_file_create(config_wifi_name, config_wifi_psd);
+
+        /* crdentials have been saved here, so update the saved bit */
+        credentials_saved = 1;
+
+        // JsonDocument doc;
+        // readFile(LittleFS, config_file_path);
+        // deserializeJson(doc, file_data_buffer);
+        // doc["wifi_configured"] = credentials_saved;
+
+        // todo: update screen
+
 
         request->send(200, "text/html", wifif_server_success_response);
     });
@@ -223,12 +262,15 @@ void file_operations_init() {
             /**
              * 
              * Now if the config.ini file exists, we need to read its contents.
-             * since data here is stored as JSON, there is a variable called wifi_configured.
+             * since data here is stored as JSON, there is a variable called "wifi_configured"
              * it is set to 1 if this device has been connected to a wifi network before (see WIFI_server_init())
              * it is 0 if no WIFI network has been configured before
              * 
              */
-
+            readFile(LittleFS, config_file_path);
+            #if DEBUG
+                ESP_LOGI(TAG, "config file contents: %s", file_data_buffer);
+            #endif
              
         }
     }
@@ -243,7 +285,6 @@ void file_operations_init() {
 void x_wifi_connect(void* pv_parameters) {
     for (;;) {
 
-        ESP_LOGI(TAG, "connecting to WIFI");
         switch (sm_state) {
             case STATE_WIFI_PROVISION_REQUEST:
                 WifiProvisioner.WIFI_create_access_point();

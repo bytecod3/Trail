@@ -22,6 +22,8 @@ extern const char* wificonfig_folder_path;      /*!< to hold the WIFI config fil
 extern const char* config_file_path;            /*!< stores configurations settings for WIFI */
 extern const char* saved_networks_file_path;    /*!< holds teh saved WIFI networks SSIDs and passwords */
 
+extern char file_data_buffer[256];
+
 void listDir(fs::FS &fs, const char *dirname, uint8_t levels);
 void createDir(fs::FS &fs, const char *path);
 void removeDir(fs::FS &fs, const char *path);

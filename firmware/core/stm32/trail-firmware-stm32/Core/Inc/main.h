@@ -87,6 +87,8 @@ void Error_Handler(void);
 #define SWCLK_GPIO_Port GPIOA
 #define BTN_OKC11_Pin GPIO_PIN_11
 #define BTN_OKC11_GPIO_Port GPIOC
+#define WIFI_LED_Pin GPIO_PIN_5
+#define WIFI_LED_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

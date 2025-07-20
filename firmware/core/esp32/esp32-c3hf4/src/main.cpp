@@ -87,6 +87,11 @@ uint64_t ESP_get_id() {
     return ESP.getEfuseMac();
 }
 
+/**
+ * @brief This function creates a JSON structure to save to saved networks file
+ * @param WIFI_name
+ * @param WIFI_password
+ */
 void JSON_file_create(const String WIFI_name, const String WIFI_password) {
     wifi_config_doc["device_id"] = ESP_get_id();
     wifi_config_doc["wifi_name"] = WIFI_name;
@@ -102,7 +107,7 @@ void JSON_file_create(const String WIFI_name, const String WIFI_password) {
 
 /**
  * @brief This function initalizes the web server to use for WIFI provisioning to the device 
- *  b
+ *
  */
 void WIFI_server_init() {
     // set handlers

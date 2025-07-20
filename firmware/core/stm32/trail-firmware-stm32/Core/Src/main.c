@@ -24,6 +24,8 @@
 /* USER CODE BEGIN Includes */
 #include "string.h"
 #include "stdio.h"
+#include "stdlib.h"
+#include "config.h"
 
 /* USER CODE END Includes */
 
@@ -47,6 +49,7 @@ I2C_HandleTypeDef hi2c1;
 
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
+UART_HandleTypeDef huart6;
 
 osThreadId defaultTaskHandle;
 /* USER CODE BEGIN PV */
@@ -72,6 +75,7 @@ static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_I2C1_Init(void);
+static void MX_USART6_UART_Init(void);
 void StartDefaultTask(void const * argument);
 
 /* USER CODE BEGIN PFP */
@@ -83,6 +87,7 @@ void xTaskReadGPS(void const* pvParamaters);
 void xTaskReadIMU(void const* pvParameters);
 void xTaskReadCompass(void const* pvParameters);
 void xTaskReadBMP(void const* pvParameters);
+void xTaskReadESPWIFI(void const* pvParameters);
 void xTaskSensorFusion(void const* pvParameters);
 void xTaskDisplayUpdate(void const* pvParameters);
 void xTaskReadKeypad(void const* pvParameters);
@@ -93,6 +98,8 @@ void xTaskLEDsUpdate(void const* pvParameters);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+
 
 /* USER CODE END 0 */
 
@@ -128,6 +135,7 @@ int main(void)
   MX_USART2_UART_Init();
   MX_USART1_UART_Init();
   MX_I2C1_Init();
+  MX_USART6_UART_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -155,6 +163,11 @@ int main(void)
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
+
+  /* tasks creation */
+  osThreadDef(xTaskReadESP, xTaskReadESPWIFI, osPriorityNormal, 0, 128);
+  xTaskReadESPWIFIHandle = osThreadCreate(osThread(xTaskReadESP), NULL);
+
   /* USER CODE END RTOS_THREADS */
 
   /* Start scheduler */
@@ -318,6 +331,39 @@ static void MX_USART2_UART_Init(void)
 }
 
 /**
+  * @brief USART6 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART6_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART6_Init 0 */
+
+  /* USER CODE END USART6_Init 0 */
+
+  /* USER CODE BEGIN USART6_Init 1 */
+
+  /* USER CODE END USART6_Init 1 */
+  huart6.Instance = USART6;
+  huart6.Init.BaudRate = 115200;
+  huart6.Init.WordLength = UART_WORDLENGTH_8B;
+  huart6.Init.StopBits = UART_STOPBITS_1;
+  huart6.Init.Parity = UART_PARITY_NONE;
+  huart6.Init.Mode = UART_MODE_TX_RX;
+  huart6.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart6.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart6) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART6_Init 2 */
+
+  /* USER CODE END USART6_Init 2 */
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -381,6 +427,48 @@ static void MX_GPIO_Init(void)
 void ButtonCheckTask(void* pvParameters) {
 
 	while (1) {
+
+	}
+}
+
+/**
+ * @brief This task reads the data received from ESP32 concerning WIFI state
+ *
+ */
+void xTaskReadESPWIFI(void const *pvParameters) {
+	uint8_t uart1_rx_buffer[5];
+
+	for(;;) {
+
+		/* receive state from ESP32 */
+		HAL_StatusTypeDef status = HAL_UART_Receive(&huart1, uart1_rx_buffer, sizeof(uart1_rx_buffer), 200);
+
+		if(status == HAL_OK) {
+			/* nul terminate */
+			//uart1_rx_buffer[sizeof(uart1_rx_buffer) - 1] = '\0';
+			//HAL_UART_Transmit(&huart6, (uint8_t*)uart1_rx_buffer, sizeof(uart1_rx_buffer), 100);
+
+			/* extract the WIFI state */
+			int wifi_state = atoi((char*) uart1_rx_buffer);
+			HAL_UART_Transmit(&huart6, (uint8_t*)wifi_state, sizeof(wifi_state), 100);
+
+		} else {
+			HAL_UART_Transmit(&huart6, (uint8_t*)"Timeout\r\n", sizeof("Timeout\r\n"), 100);
+		}
+
+		vTaskDelay(pdMS_TO_TICKS(5)); /* to prevent task starvation */
+
+
+
+//		#if DEBUG
+//
+//			vTaskDelay(pdMS_TO_TICKS(1));
+//		#endif
+
+			//HAL_UART_Transmit(&huart6, (uint8_t*)"Hello STM\r\n", strlen("Hello STM\r\n"), HAL_MAX_DELAY);
+
+			//HAL_GPIO_TogglePin(WIFI_LED_GPIO_Port, WIFI_LED_Pin);
+			//vTaskDelay(pdMS_TO_TICKS(100));
 
 	}
 }

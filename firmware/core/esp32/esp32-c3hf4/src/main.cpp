@@ -31,6 +31,7 @@ void WIFI_server_init();
 static const char* TAG = "WIFI_MONITOR";        /* tag to use for debug messages */
 
 /* finite state machine variables */
+char wifi_state_msg_buffer[5];
 wifi_state_t sm_state = STATE_WIFI_PROVISION_REQUEST;
 
 /* wifi provisioning */
@@ -443,22 +444,30 @@ void x_wifi_state_callback(void* pvParameters) {
 void x_get_state_from_queue(void* pvParameters) {
     wifi_state_t rcvd_state;
 
+
     for (;;) {
         xQueueReceive(wifi_state_queue_handle, &rcvd_state, portMAX_DELAY);
 
         #if DEBUG
             ESP_LOGI(TAG, "current state: %s", convert_state_to_str(rcvd_state));
         #endif
+
+        /* send the WI-FI state to ESP32 via UART */
+        sprintf(wifi_state_msg_buffer, "%d\r\n\0", rcvd_state);
+        Serial1.println(wifi_state_msg_buffer);
+
     }
     
 }
 
 void setup() {
     Serial.begin(BAUDRATE);
+    Serial1.begin(BAUDRATE, SERIAL_8N1, 4, 5); /* RX-4, TX-5 */
     delay(50); /* delay to give time to serial to boot OK */
+
     esp_log_level_set(TAG, ESP_LOG_INFO);
 
-    /* mount files sytem */
+    /* mount file system */
     LittleFS_mount();
 
     /* initialize files */
@@ -518,5 +527,7 @@ void setup() {
 }
 
 void loop() {
+
+    vTaskDelay(pdMS_TO_TICKS(1)); /* prevent WDT trigger */
 
 }

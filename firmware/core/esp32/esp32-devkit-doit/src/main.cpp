@@ -11,6 +11,7 @@
 
 #include <Arduino.h>
 #include "freertos/FreeRTOS.h"
+#include <WiFi.h>
 #include "pins.h"
 #include "globals.h"
 #include "FSM.h"
@@ -100,7 +101,7 @@ void JSON_file_create(const String WIFI_name, const String WIFI_password) {
 
 /**
  * @brief This function initalizes the web server to use for WIFI provisioning to the device 
- * 
+ *  b
  */
 void WIFI_server_init() {
     // set handlers
@@ -310,6 +311,9 @@ void file_operations_init() {
                 if(wifi_conf_check_bit == 0) {
                     sm_state = STATE_WIFI_PROVISION_REQUEST;
                 } else {
+                     #if DEBUG
+                        ESP_LOGI(TAG, "Should be connecting");
+                    #endif
                     sm_state = STATE_WIFI_CONNECT;
                 }
 
@@ -327,8 +331,13 @@ void file_operations_init() {
  * @param pv_parameters 
  */
 void x_wifi_connect(void* pv_parameters) {
-    for (;;) {
 
+    JsonDocument doc;
+    const char* w_ssid;
+    const char* w_password;
+
+    for (;;) {
+        
         switch (sm_state) {
             case STATE_WIFI_PROVISION_REQUEST:
                 WifiProvisioner.WIFI_create_access_point();
@@ -355,14 +364,65 @@ void x_wifi_connect(void* pv_parameters) {
                 }
 
                 break;
+
+            case STATE_WIFI_CONNECT:
+                /* fetch the saved WIFI credentials here and use them to connect */
+                readFile(LittleFS, saved_networks_file_path);
+                deserializeJson(doc, file_data_buffer);
+
+                w_ssid = doc["wifi_name"];
+                w_password = doc["wifi_password"];
+
+                // #if DEBUG
+                //     ESP_LOGI(TAG, "Retrieved WIFI details. connecting to: %s", w_ssid);
+                // #endif
+
+                /* attempt the actual connection */
+                if(WiFi.begin(w_ssid, w_password)) {
+                    wifi_connect_start_time = millis();
+                    sm_state = STATE_WIFI_CONNECTING;
+                } else {
+                    sm_state = STATE_WIFI_CONNECTION_ERROR;
+                }
+
+                break;
+
+            case STATE_WIFI_CONNECTING:
+                if(WiFi.status() == WL_CONNECTED) {
+                    sm_state = STATE_WIFI_CONNECTED;
+                } else if( (millis() - wifi_connect_start_time) > WIFI_CONNECTION_TIMEOUT ) {
+                    sm_state = STATE_WIFI_CONNECTION_TIMEOUT; 
+                    /* todo: update UI on STM32 */
+                }
+
+                vTaskDelay(pdMS_TO_TICKS(1)); /* to prevent WDT overflow */
+
+                break;
+
+            case STATE_WIFI_CONNECTION_ERROR:
+                /* todo: update UART msg to STM32 with error -> could not connect */
+                break;
+
+            case STATE_WIFI_CONNECTION_TIMEOUT:
+                break;
+
+            case STATE_WIFI_DISCONNECTED:
+                break;
         
             default:
                 break;
+
         }
 
         /* send the current state to queue even if it is global */
         // todo: check return type from QUEUE send 
         xQueueSend(wifi_state_queue_handle, &sm_state, portMAX_DELAY);
+
+        /* check stack usage */
+        #if MONITOR_WIFI_WATERMARK
+            UBaseType_t high_water_mark = uxTaskGetStackHighWaterMark(NULL);
+            ESP_LOGI("TASK", "Free stack in words: %u", high_water_mark);
+        #endif
 
         vTaskDelay(1 / portTICK_PERIOD_MS);
     }

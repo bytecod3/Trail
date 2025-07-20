@@ -10,9 +10,11 @@
  * 
  */
 
- #ifndef CONFIG_H
- #define CONFIG_H
+#ifndef CONFIG_H
+#define CONFIG_H
 
- #define DEBUG 1                       /*!< To enable or disable debugging. Set to 1 to enable debug and 0 to diable debug */
+#define DEBUG                  1               /*!< To enable or disable debugging. Set to 1 to enable debug and 0 to diable debug */
+#define MONITOR_WIFI_WATERMARK  0              /*!< To enable or disable watermarck soze check on wifi connection task. Set to 1 to enable debug and 0 to diable debug */
+
 
  #endif

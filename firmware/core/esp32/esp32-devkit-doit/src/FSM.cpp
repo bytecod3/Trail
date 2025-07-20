@@ -17,11 +17,11 @@ const char* convert_state_to_str(wifi_state_t state) {
             break;
 
         case STATE_WIFI_CONNECT:
-            return "STATE_WIFI_CONNECTING";
+            return "STATE_WIFI_CONNECT";
             break;
 
         case STATE_WIFI_CONNECTING:
-            return "STATE_WIFI_CONNECT";
+            return "STATE_WIFI_CONNECTING";
             break;
 
         case STATE_WIFI_CONNECTED:

@@ -371,8 +371,8 @@ static void MX_USART6_UART_Init(void)
 static void MX_GPIO_Init(void)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
-/* USER CODE BEGIN MX_GPIO_Init_1 */
-/* USER CODE END MX_GPIO_Init_1 */
+  /* USER CODE BEGIN MX_GPIO_Init_1 */
+  /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOC_CLK_ENABLE();
@@ -414,8 +414,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(WIFI_LED_GPIO_Port, &GPIO_InitStruct);
 
-/* USER CODE BEGIN MX_GPIO_Init_2 */
-/* USER CODE END MX_GPIO_Init_2 */
+  /* USER CODE BEGIN MX_GPIO_Init_2 */
+  /* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */
@@ -432,11 +432,12 @@ void ButtonCheckTask(void* pvParameters) {
 }
 
 /**
- * @brief This task reads the data received from ESP32 concerning WIFI state
+ * @brief This task reads the data received from ESP32 and extracts the WIFI state
  *
  */
 void xTaskReadESPWIFI(void const *pvParameters) {
-	uint8_t uart1_rx_buffer[5];
+	uint8_t uart1_rx_buffer[3];
+	uint8_t wifi_state[3];
 
 	for(;;) {
 
@@ -444,31 +445,16 @@ void xTaskReadESPWIFI(void const *pvParameters) {
 		HAL_StatusTypeDef status = HAL_UART_Receive(&huart1, uart1_rx_buffer, sizeof(uart1_rx_buffer), 200);
 
 		if(status == HAL_OK) {
-			/* nul terminate */
-			//uart1_rx_buffer[sizeof(uart1_rx_buffer) - 1] = '\0';
-			//HAL_UART_Transmit(&huart6, (uint8_t*)uart1_rx_buffer, sizeof(uart1_rx_buffer), 100);
 
-			/* extract the WIFI state */
-			int wifi_state = atoi((char*) uart1_rx_buffer);
-			HAL_UART_Transmit(&huart6, (uint8_t*)wifi_state, sizeof(wifi_state), 100);
+			//sprintf(wifi_state, "%d\n", *uart1_rx_buffer);
+
+			HAL_UART_Transmit(&huart6, (uint8_t*)uart1_rx_buffer , sizeof(uart1_rx_buffer), 100);
 
 		} else {
 			HAL_UART_Transmit(&huart6, (uint8_t*)"Timeout\r\n", sizeof("Timeout\r\n"), 100);
 		}
 
-		vTaskDelay(pdMS_TO_TICKS(5)); /* to prevent task starvation */
-
-
-
-//		#if DEBUG
-//
-//			vTaskDelay(pdMS_TO_TICKS(1));
-//		#endif
-
-			//HAL_UART_Transmit(&huart6, (uint8_t*)"Hello STM\r\n", strlen("Hello STM\r\n"), HAL_MAX_DELAY);
-
-			//HAL_GPIO_TogglePin(WIFI_LED_GPIO_Port, WIFI_LED_Pin);
-			//vTaskDelay(pdMS_TO_TICKS(100));
+		vTaskDelay(pdMS_TO_TICKS(5)); /* prevent task starvation */
 
 	}
 }
@@ -506,7 +492,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   /* USER CODE BEGIN Callback 0 */
 
   /* USER CODE END Callback 0 */
-  if (htim->Instance == TIM1) {
+  if (htim->Instance == TIM1)
+  {
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
@@ -528,8 +515,7 @@ void Error_Handler(void)
   }
   /* USER CODE END Error_Handler_Debug */
 }
-
-#ifdef  USE_FULL_ASSERT
+#ifdef USE_FULL_ASSERT
 /**
   * @brief  Reports the name of the source file and the source line number
   *         where the assert_param error has occurred.

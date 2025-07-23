@@ -458,7 +458,7 @@ void x_get_state_from_queue(void* pvParameters) {
         #endif
 
         /* send the WI-FI state to ESP32 via UART */
-        sprintf(wifi_state_msg_buffer, "%d\r\n\0", rcvd_state);
+        sprintf(wifi_state_msg_buffer, "%d\0\n", rcvd_state);
         Serial1.println(wifi_state_msg_buffer);
 
     }

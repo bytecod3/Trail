@@ -7,6 +7,6 @@
 ../Core/Src/main.c:371:13:MX_GPIO_Init	1
 ../Core/Src/main.c:427:6:ButtonCheckTask	1
 ../Core/Src/main.c:438:6:xTaskReadESPWIFI	2
-../Core/Src/main.c:485:6:StartDefaultTask	1
-../Core/Src/main.c:504:6:HAL_TIM_PeriodElapsedCallback	2
-../Core/Src/main.c:521:6:Error_Handler	1
+../Core/Src/main.c:471:6:StartDefaultTask	1
+../Core/Src/main.c:490:6:HAL_TIM_PeriodElapsedCallback	2
+../Core/Src/main.c:508:6:Error_Handler	1

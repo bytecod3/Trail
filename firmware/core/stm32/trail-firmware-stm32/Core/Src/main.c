@@ -26,6 +26,8 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "config.h"
+#include "globals.h"
+#include "state-machine.h"
 
 /* USER CODE END Includes */
 
@@ -99,6 +101,10 @@ void xTaskLEDsUpdate(void const* pvParameters);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+uint8_t activate_wifi = 1;
+
+/* initial system state */
+state_type_t wifi_sm_state = STATE_WIFI_CONNECT;
 
 
 /* USER CODE END 0 */
@@ -436,8 +442,8 @@ void ButtonCheckTask(void* pvParameters) {
  *
  */
 void xTaskReadESPWIFI(void const *pvParameters) {
-	uint8_t uart1_rx_buffer[3];
-	uint8_t wifi_state[3];
+	uint8_t uart1_rx_buffer[RECEIVED_WIFI_STATE_LENGTH];
+	char wifi_state[RECEIVED_WIFI_STATE_LENGTH];
 
 	for(;;) {
 
@@ -446,9 +452,17 @@ void xTaskReadESPWIFI(void const *pvParameters) {
 
 		if(status == HAL_OK) {
 
-			//sprintf(wifi_state, "%d\n", *uart1_rx_buffer);
+			/* convert received byte array to char */
+			for(size_t i = 0; i < sizeof(uart1_rx_buffer); i++) {
+				wifi_state[i] = (char) uart1_rx_buffer[i];
+			}
 
-			HAL_UART_Transmit(&huart6, (uint8_t*)uart1_rx_buffer , sizeof(uart1_rx_buffer), 100);
+			if( (strcmp(wifi_state, "0") == 0) {
+				/* state is WIFI_PROVISION_REQUEST*/
+			}
+
+
+			HAL_UART_Transmit(&huart6, (uint8_t*)wifi_state , sizeof(wifi_state), 100);
 
 		} else {
 			HAL_UART_Transmit(&huart6, (uint8_t*)"Timeout\r\n", sizeof("Timeout\r\n"), 100);

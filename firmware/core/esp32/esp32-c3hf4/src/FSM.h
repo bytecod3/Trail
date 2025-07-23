@@ -15,7 +15,7 @@
  /**
  * @brief Finite state machine states for WIFI connection system
  * 
- * This struct contains all the possible states that the WIFI subsystem can be in 
+ * This enum contains all the possible states that the WIFI subsystem can be in 
  * at a given time during the operation of the device 
  *  * 
  * @typedef wifi_state_t

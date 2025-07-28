@@ -57,18 +57,12 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define BTN_LEFT_Pin GPIO_PIN_13
-#define BTN_LEFT_GPIO_Port GPIOC
-#define BTN_DOWN_Pin GPIO_PIN_14
-#define BTN_DOWN_GPIO_Port GPIOC
-#define BTN_UP_Pin GPIO_PIN_15
-#define BTN_UP_GPIO_Port GPIOC
 #define U_LED_Pin GPIO_PIN_0
 #define U_LED_GPIO_Port GPIOC
 #define GPS_PPS_Pin GPIO_PIN_1
 #define GPS_PPS_GPIO_Port GPIOC
-#define BTN_RIGHT_Pin GPIO_PIN_0
-#define BTN_RIGHT_GPIO_Port GPIOA
+#define VBATT_SENS_Pin GPIO_PIN_2
+#define VBATT_SENS_GPIO_Port GPIOC
 #define BTN_OK_Pin GPIO_PIN_1
 #define BTN_OK_GPIO_Port GPIOA
 #define GPS_RX_Pin GPIO_PIN_2
@@ -77,6 +71,12 @@ void Error_Handler(void);
 #define GPS_TX_GPIO_Port GPIOA
 #define IMU_INT_Pin GPIO_PIN_6
 #define IMU_INT_GPIO_Port GPIOC
+#define KBD_COL_C_Pin GPIO_PIN_7
+#define KBD_COL_C_GPIO_Port GPIOC
+#define KBD_COL_B_Pin GPIO_PIN_8
+#define KBD_COL_B_GPIO_Port GPIOC
+#define KBD_COL_A_Pin GPIO_PIN_9
+#define KBD_COL_A_GPIO_Port GPIOC
 #define ESP_RX0_Pin GPIO_PIN_9
 #define ESP_RX0_GPIO_Port GPIOA
 #define ESP_TX0_Pin GPIO_PIN_10
@@ -85,8 +85,12 @@ void Error_Handler(void);
 #define SWDIO_GPIO_Port GPIOA
 #define SWCLK_Pin GPIO_PIN_14
 #define SWCLK_GPIO_Port GPIOA
-#define BTN_OKC11_Pin GPIO_PIN_11
-#define BTN_OKC11_GPIO_Port GPIOC
+#define KBD_ROW_C_Pin GPIO_PIN_10
+#define KBD_ROW_C_GPIO_Port GPIOC
+#define KBD_ROW_B_Pin GPIO_PIN_11
+#define KBD_ROW_B_GPIO_Port GPIOC
+#define KBD_ROW_A_Pin GPIO_PIN_12
+#define KBD_ROW_A_GPIO_Port GPIOC
 #define WIFI_LED_Pin GPIO_PIN_5
 #define WIFI_LED_GPIO_Port GPIOB
 

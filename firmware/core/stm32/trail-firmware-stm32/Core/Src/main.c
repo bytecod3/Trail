@@ -196,7 +196,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  HAL_GPIO_TogglePin(WIFI_LED_GPIO_Port, WIFI_LED_Pin);
+	  HAL_GPIO_TogglePin(U_LED_GPIO_Port, U_LED_Pin);
 	  HAL_Delay(700);
 
   }
@@ -549,27 +549,27 @@ void xTaskReadESPWIFI(void const *pvParameters) {
 
 	for(;;) {
 
-		/* receive state from ESP32 */
-		HAL_StatusTypeDef status = HAL_UART_Receive(&huart1, uart1_rx_buffer, sizeof(uart1_rx_buffer), 200);
-
-		if(status == HAL_OK) {
-
-			/* convert received byte array to char */
-			for(size_t i = 0; i < sizeof(uart1_rx_buffer); i++) {
-				wifi_state[i] = (char) uart1_rx_buffer[i];
-			}
-
-			if((strcmp(wifi_state, '0') == 0) {
-				/* state is WIFI_PROVISION_REQUEST */
-				wifi_sm_state = STATE;
-			}
-
-
-			HAL_UART_Transmit(&huart6, (uint8_t*)wifi_state , sizeof(wifi_state), 100);
-
-		} else {
-			HAL_UART_Transmit(&huart6, (uint8_t*)"Timeout\r\n", sizeof("Timeout\r\n"), 100);
-		}
+//		/* receive state from ESP32 */
+//		HAL_StatusTypeDef status = HAL_UART_Receive(&huart1, uart1_rx_buffer, sizeof(uart1_rx_buffer), 200);
+//
+//		if(status == HAL_OK) {
+//
+//			/* convert received byte array to char */
+//			for(size_t i = 0; i < sizeof(uart1_rx_buffer); i++) {
+//				wifi_state[i] = (char) uart1_rx_buffer[i];
+//			}
+//
+//			if((strcmp(wifi_state, '0') == 0) {
+//				/* state is WIFI_PROVISION_REQUEST */
+//				wifi_sm_state = STATE;
+//			}
+//
+//
+//			HAL_UART_Transmit(&huart6, (uint8_t*)wifi_state , sizeof(wifi_state), 100);
+//
+//		} else {
+//			HAL_UART_Transmit(&huart6, (uint8_t*)"Timeout\r\n", sizeof("Timeout\r\n"), 100);
+//		}
 
 		vTaskDelay(pdMS_TO_TICKS(5)); /* prevent task starvation */
 

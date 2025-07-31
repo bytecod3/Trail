@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wificonfig_0',['WifiConfig',['../d3/d17/class_wifi_config.html',1,'']]]
+  ['corcoroutinecontrolblock_0',['corCoRoutineControlBlock',['../d4/d1e/structcor_co_routine_control_block.html',1,'']]]
 ];

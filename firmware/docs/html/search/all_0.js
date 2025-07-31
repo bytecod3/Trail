@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['_5f_5fattribute_5f_5f_0',['__attribute__',['../d5/d87/syscalls_8c.html#af9aace1b44b73111e15aa39f06f43456',1,'syscalls.c']]],
+  ['_5f_5fattribute_5f_5f_0',['__attribute__',['../d5/d87/syscalls_8c.html#af9aace1b44b73111e15aa39f06f43456',1,'__attribute__((weak)):&#160;syscalls.c'],['../de/d4d/port_8c.html#af9aace1b44b73111e15aa39f06f43456',1,'__attribute__((weak)):&#160;port.c'],['../dc/d35/portmacro_8h.html#ac864e333c11a6614eab8e8542ba01ed0',1,'__attribute__((always_inline)) static inline uint8_t ucPortCountLeadingZeros(uint32_t ulBitmap):&#160;portmacro.h']]],
   ['_5f_5fio_5fgetchar_1',['__io_getchar',['../d5/d87/syscalls_8c.html#ad0122671640a3af49792ddaa59e8294e',1,'syscalls.c']]],
   ['_5f_5fio_5fputchar_2',['__io_putchar',['../d5/d87/syscalls_8c.html#aa53ed4b191897a1bfc205aa1da005d24',1,'syscalls.c']]],
   ['_5f_5fsbrk_5fheap_5fend_3',['__sbrk_heap_end',['../dc/d91/sysmem_8c.html#a2cf862d604e9c7cfcf0528a0f539a6a5',1,'sysmem.c']]],

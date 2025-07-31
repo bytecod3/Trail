@@ -13,6 +13,7 @@ var files_8h =
     [ "writeFile", "dd/d20/files_8h.html#adfdfe491c3b951586aeba25a0b8ccf80", null ],
     [ "writeFile2", "dd/d20/files_8h.html#a4a3d267d7b73b6f9604b0b55f74202e0", null ],
     [ "config_file_path", "dd/d20/files_8h.html#a26565396cc22008505f443cae1228ce0", null ],
+    [ "file_data_buffer", "dd/d20/files_8h.html#a8cfa7c405e21a42d81fd5921249144b3", null ],
     [ "saved_networks_file_path", "dd/d20/files_8h.html#a6fb6573887e100eec4ff8531ab3900d5", null ],
     [ "wificonfig_folder_path", "dd/d20/files_8h.html#ab2fb6cedfe68383f72cb5d0c067eb218", null ]
 ];

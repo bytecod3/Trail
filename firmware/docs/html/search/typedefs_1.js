@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['shares_0',['Shares',['../d3/d0b/shares_8h.html#a1e894a623d7078384faecb933d220562',1,'shares.h']]]
+  ['coroutinehandle_5ft_0',['CoRoutineHandle_t',['../d8/d4a/croutine_8h.html#a33b9d058688c92258155b5756d9936dd',1,'croutine.h']]],
+  ['crcb_5ft_1',['CRCB_t',['../d8/d4a/croutine_8h.html#a1c15f304ffe02d0777ae2509b3658e6f',1,'croutine.h']]],
+  ['crcoroutine_5fcode_2',['crCOROUTINE_CODE',['../d8/d4a/croutine_8h.html#a397a7505718dd366d8411ce324c49758',1,'croutine.h']]]
 ];

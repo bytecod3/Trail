@@ -1,4 +1,21 @@
 var searchData=
 [
-  ['format_5flittlefs_5fif_5ffailed_0',['FORMAT_LITTLEFS_IF_FAILED',['../dd/d20/files_8h.html#a5b559579eddcd21e8b9b05ed91a875a9',1,'files.h']]]
+  ['errcould_5fnot_5fallocate_5frequired_5fmemory_0',['errCOULD_NOT_ALLOCATE_REQUIRED_MEMORY',['../db/d67/projdefs_8h.html#a0b024e12cbca6f5018f5f1a43818b03d',1,'projdefs.h']]],
+  ['errqueue_5fblocked_1',['errQUEUE_BLOCKED',['../db/d67/projdefs_8h.html#a4a7ca54ee5527cd7a14830956e05ea55',1,'projdefs.h']]],
+  ['errqueue_5fempty_2',['errQUEUE_EMPTY',['../db/d67/projdefs_8h.html#a4d79b09954b1efa73ad8d87a36b4a575',1,'projdefs.h']]],
+  ['errqueue_5ffull_3',['errQUEUE_FULL',['../db/d67/projdefs_8h.html#ae40de11e4044a83a97d2cb5d00ce608b',1,'projdefs.h']]],
+  ['errqueue_5fyield_4',['errQUEUE_YIELD',['../db/d67/projdefs_8h.html#a3b2e2afaa2851576dfc2779a7fea59b4',1,'projdefs.h']]],
+  ['esp_5frx0_5fgpio_5fport_5',['ESP_RX0_GPIO_Port',['../d4/dbf/main_8h.html#ad80f1da650a95034d8b2d0e6ba238d47',1,'main.h']]],
+  ['esp_5frx0_5fpin_6',['ESP_RX0_Pin',['../d4/dbf/main_8h.html#afa286fa47da3cb12d0b044b3bb1be763',1,'main.h']]],
+  ['esp_5ftx0_5fgpio_5fport_7',['ESP_TX0_GPIO_Port',['../d4/dbf/main_8h.html#a3a2b11f1f00aa627ab97d055f8fc643b',1,'main.h']]],
+  ['esp_5ftx0_5fpin_8',['ESP_TX0_Pin',['../d4/dbf/main_8h.html#a0ccc3ab0cea2632a36c897662e9340e7',1,'main.h']]],
+  ['etaskstateget_9',['eTaskStateGet',['../d3/d1c/_free_r_t_o_s_8h.html#ad1bc0e8a3c68c90d6711ec4a9ac1a516',1,'FreeRTOS.h']]],
+  ['eth_5frx_5fbuf_5fsize_10',['ETH_RX_BUF_SIZE',['../d2/d14/stm32f1xx__hal__conf_8h.html#a0cdaf687f7a7f2dba570d5a722990786',1,'stm32f1xx_hal_conf.h']]],
+  ['eth_5frxbufnb_11',['ETH_RXBUFNB',['../d2/d14/stm32f1xx__hal__conf_8h.html#a62b0f224fa9c4f2e5574c9e52526f751',1,'stm32f1xx_hal_conf.h']]],
+  ['eth_5ftx_5fbuf_5fsize_12',['ETH_TX_BUF_SIZE',['../d2/d14/stm32f1xx__hal__conf_8h.html#af83956dfc1b135c3c92ac409758b6cf4',1,'stm32f1xx_hal_conf.h']]],
+  ['eth_5ftxbufnb_13',['ETH_TXBUFNB',['../d2/d14/stm32f1xx__hal__conf_8h.html#a4ad07ad8fa6f8639ab8ef362390d86c7',1,'stm32f1xx_hal_conf.h']]],
+  ['eventclear_5fevents_5fon_5fexit_5fbit_14',['eventCLEAR_EVENTS_ON_EXIT_BIT',['../d1/d99/event__groups_8c.html#a1404686af7c8070fa57675707c817abc',1,'event_groups.c']]],
+  ['eventevent_5fbits_5fcontrol_5fbytes_15',['eventEVENT_BITS_CONTROL_BYTES',['../d1/d99/event__groups_8c.html#a46c8292a6ba88b017cca402f5baf670b',1,'event_groups.c']]],
+  ['eventunblocked_5fdue_5fto_5fbit_5fset_16',['eventUNBLOCKED_DUE_TO_BIT_SET',['../d1/d99/event__groups_8c.html#ab451d5ad95813d5ec7ff1784d69e9ec3',1,'event_groups.c']]],
+  ['eventwait_5ffor_5fall_5fbits_17',['eventWAIT_FOR_ALL_BITS',['../d1/d99/event__groups_8c.html#ae98d5f1271845ad42742aef9659e1568',1,'event_groups.c']]]
 ];

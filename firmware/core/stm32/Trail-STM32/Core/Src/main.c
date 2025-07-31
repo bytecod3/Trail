@@ -29,6 +29,7 @@
 #include "config.h"
 #include "globals.h"
 #include "state-machine.h"
+#include "keypad.h"
 
 /* USER CODE END Includes */
 
@@ -107,6 +108,10 @@ void xTaskLEDsUpdate(void const* pvParameters);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+/*
+ * keypad instance
+ */
+Keypad keypad;
 
 uint8_t activate_wifi = 1;
 
@@ -151,7 +156,14 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
+
   /* USER CODE BEGIN 2 */
+
+  /**
+   * Initialize keypad
+   */
+  Keypad_initialise(&keypad);
+
 
   /* USER CODE END 2 */
 
@@ -546,7 +558,7 @@ void xTaskReadESPWIFI(void const *pvParameters) {
 	for(;;) {
 
 		HAL_GPIO_TogglePin(U_LED_GPIO_Port, U_LED_Pin);
-		vTaskDelay(pdMS_TO_TICKS(300));
+		vTaskDelay(pdMS_TO_TICKS(200));
 
 		/* receive state from ESP32 */
 		HAL_StatusTypeDef status = HAL_UART_Receive(&huart1, uart1_rx_buffer, sizeof(uart1_rx_buffer), 200);
@@ -575,10 +587,16 @@ void xTaskReadESPWIFI(void const *pvParameters) {
 	}
 }
 
-
+/**
+ * @brief This task scans the keypad for for key presses
+ *
+ */
 void xTaskReadKeypad (void const* argument) {
+	char n[2];
 	for(;;) {
-
+		sprintf(n, "%d\n", keypad.Keypad_get_num_cols());
+		HAL_UART_Transmit(&huart3, (uint8_t*)n, sizeof(n), HAL_MAX_DELAY);
+		vTaskDelay(5);
 	}
 
 }

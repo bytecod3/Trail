@@ -1,5 +1,31 @@
 var searchData=
 [
-  ['tft_5fgrey_0',['TFT_GREY',['../dc/dce/playground_2_e_s_p32-_i_l_i9488-_s_p_i-screen_2src_2main_8cpp.html#abe8b8b5cc8a44aa7c54efec2742fa5d0',1,'main.cpp']]],
-  ['tick_5fint_5fpriority_1',['TICK_INT_PRIORITY',['../d7/d74/stm32f4xx__hal__conf_8h.html#ae27809d4959b9fd5b5d974e3e1c77d2e',1,'stm32f4xx_hal_conf.h']]]
+  ['oscmsis_0',['osCMSIS',['../d2/d47/cmsis__os_8h.html#a702196bacccbb978620c736b209387f1',1,'cmsis_os.h']]],
+  ['oscmsis_5fkernel_1',['osCMSIS_KERNEL',['../d2/d47/cmsis__os_8h.html#ab78dce646fabec479c5f34bc5175b7de',1,'cmsis_os.h']]],
+  ['osfeature_5fmailq_2',['osFeature_MailQ',['../d2/d47/cmsis__os_8h.html#aceb2e0071ce160d153047f2eac1aca8e',1,'cmsis_os.h']]],
+  ['osfeature_5fmainthread_3',['osFeature_MainThread',['../d2/d47/cmsis__os_8h.html#a22f7d235bc9f783933bd5a981fd79696',1,'cmsis_os.h']]],
+  ['osfeature_5fmessageq_4',['osFeature_MessageQ',['../d2/d47/cmsis__os_8h.html#a479a6561f859e3d4818e25708593d203',1,'cmsis_os.h']]],
+  ['osfeature_5fpool_5',['osFeature_Pool',['../d2/d47/cmsis__os_8h.html#add84b683001de327894851b428587caa',1,'cmsis_os.h']]],
+  ['osfeature_5fsemaphore_6',['osFeature_Semaphore',['../d2/d47/cmsis__os_8h.html#a7da4c7bfb340779c9fc7b321f5ab3e3a',1,'cmsis_os.h']]],
+  ['osfeature_5fsignals_7',['osFeature_Signals',['../d2/d47/cmsis__os_8h.html#a01edde265710d883b6e237d34a6ef4a6',1,'cmsis_os.h']]],
+  ['osfeature_5fsystick_8',['osFeature_SysTick',['../d2/d47/cmsis__os_8h.html#ae554ec16c23c5b7d65affade2a351891',1,'cmsis_os.h']]],
+  ['osfeature_5fwait_9',['osFeature_Wait',['../d2/d47/cmsis__os_8h.html#a6c97d38879ae86491628f6e647639bad',1,'cmsis_os.h']]],
+  ['oskernelsystemid_10',['osKernelSystemId',['../d2/d47/cmsis__os_8h.html#a47cf03658f01cdffca688e9096b58289',1,'cmsis_os.h']]],
+  ['oskernelsystickfrequency_11',['osKernelSysTickFrequency',['../d2/d47/cmsis__os_8h.html#a9e0954d52722673e2031233a2ab99960',1,'cmsis_os.h']]],
+  ['oskernelsystickmicrosec_12',['osKernelSysTickMicroSec',['../d2/d47/cmsis__os_8h.html#ae12c190af42d7310d8006d64f4ed5a88',1,'cmsis_os.h']]],
+  ['osmailq_13',['osMailQ',['../d2/d47/cmsis__os_8h.html#ad2deeb66d51ade54e63d8f87ff2ec9d2',1,'cmsis_os.h']]],
+  ['osmailqdef_14',['osMailQDef',['../d2/d47/cmsis__os_8h.html#a58d712b16c0c6668059f509386d1e55b',1,'cmsis_os.h']]],
+  ['osmessageq_15',['osMessageQ',['../d2/d47/cmsis__os_8h.html#a2d446a0b4bb90bf05d6f92eedeaabc97',1,'cmsis_os.h']]],
+  ['osmessageqdef_16',['osMessageQDef',['../d2/d47/cmsis__os_8h.html#ac9a6a6276c12609793e7701afcc82326',1,'cmsis_os.h']]],
+  ['osmutex_17',['osMutex',['../d2/d47/cmsis__os_8h.html#a1122a86faa64b4a0880c76cf68d0c934',1,'cmsis_os.h']]],
+  ['osmutexdef_18',['osMutexDef',['../d2/d47/cmsis__os_8h.html#a9b522438489d7c402c95332b58bc94f3',1,'cmsis_os.h']]],
+  ['ospool_19',['osPool',['../d2/d47/cmsis__os_8h.html#a5f0b204a82327533d420210125c90697',1,'cmsis_os.h']]],
+  ['ospooldef_20',['osPoolDef',['../d2/d47/cmsis__os_8h.html#a87b471d4fe2d5dbd0040708edd52771b',1,'cmsis_os.h']]],
+  ['ossemaphore_21',['osSemaphore',['../d2/d47/cmsis__os_8h.html#a03761ee8d2c3cd4544e18364ab301dac',1,'cmsis_os.h']]],
+  ['ossemaphoredef_22',['osSemaphoreDef',['../d2/d47/cmsis__os_8h.html#a9e66fe361749071e5ab87826c43c2f1b',1,'cmsis_os.h']]],
+  ['osthread_23',['osThread',['../d2/d47/cmsis__os_8h.html#af0c7c6b5e09f8be198312144b5c9e453',1,'cmsis_os.h']]],
+  ['osthreaddef_24',['osThreadDef',['../d2/d47/cmsis__os_8h.html#a1537e80813785bebbc3cbab3226eb04f',1,'cmsis_os.h']]],
+  ['ostimer_25',['osTimer',['../d2/d47/cmsis__os_8h.html#a1b8d670eaf964b2910fa06885e650678',1,'cmsis_os.h']]],
+  ['ostimerdef_26',['osTimerDef',['../d2/d47/cmsis__os_8h.html#a1c720627e08d1cc1afcad44e799ed492',1,'cmsis_os.h']]],
+  ['oswaitforever_27',['osWaitForever',['../d2/d47/cmsis__os_8h.html#a9eb9a7a797a42e4b55eb171ecc609ddb',1,'cmsis_os.h']]]
 ];

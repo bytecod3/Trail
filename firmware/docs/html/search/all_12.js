@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['vdd_5fvalue_0',['VDD_VALUE',['../d7/d74/stm32f4xx__hal__conf_8h.html#aae550dad9f96d52cfce5e539adadbbb4',1,'stm32f4xx_hal_conf.h']]]
+  ['readfile_0',['readFile',['../dd/d8b/files_8cpp.html#a39694d8c816730fe5b678b70afa424ed',1,'readFile(fs::FS &amp;fs, const char *path):&#160;files.cpp'],['../dd/d20/files_8h.html#a39694d8c816730fe5b678b70afa424ed',1,'readFile(fs::FS &amp;fs, const char *path):&#160;files.cpp']]],
+  ['readme_2emd_1',['README.md',['../dd/da4/applications_2_r_e_a_d_m_e_8md.html',1,'(Global Namespace)'],['../d4/da8/common_2_r_e_a_d_m_e_8md.html',1,'(Global Namespace)'],['../d8/d5b/components_2_r_e_a_d_m_e_8md.html',1,'(Global Namespace)'],['../d7/df8/core_2esp32_2_r_e_a_d_m_e_8md.html',1,'(Global Namespace)'],['../d2/d71/core_2_r_e_a_d_m_e_8md.html',1,'(Global Namespace)'],['../d0/db6/core_2stm32_2_r_e_a_d_m_e_8md.html',1,'(Global Namespace)'],['../d9/dd6/_r_e_a_d_m_e_8md.html',1,'(Global Namespace)'],['../db/d13/utils_2_r_e_a_d_m_e_8md.html',1,'(Global Namespace)']]],
+  ['received_5fwifi_5fstate_5flength_2',['RECEIVED_WIFI_STATE_LENGTH',['../d9/d16/stm32_2_trail-_s_t_m32_2_core_2_src_2globals_8h.html#abbb1b4666600fd32564bb43691f02ace',1,'globals.h']]],
+  ['removedir_3',['removeDir',['../dd/d8b/files_8cpp.html#a4bb1688c9435a8de57b1742b9b51c4c0',1,'removeDir(fs::FS &amp;fs, const char *path):&#160;files.cpp'],['../dd/d20/files_8h.html#a4bb1688c9435a8de57b1742b9b51c4c0',1,'removeDir(fs::FS &amp;fs, const char *path):&#160;files.cpp']]],
+  ['renamefile_4',['renameFile',['../dd/d8b/files_8cpp.html#a79399a113c185d123e34bbeadda754a9',1,'renameFile(fs::FS &amp;fs, const char *path1, const char *path2):&#160;files.cpp'],['../dd/d20/files_8h.html#a79399a113c185d123e34bbeadda754a9',1,'renameFile(fs::FS &amp;fs, const char *path1, const char *path2):&#160;files.cpp']]]
 ];

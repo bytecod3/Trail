@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['scnscb_5ftype_0',['SCnSCB_Type',['../d6/d23/group___c_m_s_i_s__register__aliases.html#gab518efb7ebfe2dfcb1e821d554a935f6',1,'core_cm55.h']]]
+  ['heapregion_5ft_0',['HeapRegion_t',['../d2/de2/portable_8h.html#acce46e1bf21496c11f2b1e49ded2882b',1,'portable.h']]],
+  ['heapstats_5ft_1',['HeapStats_t',['../d2/de2/portable_8h.html#aebfa6771f45f6a5ac026e91ee2fd57f4',1,'portable.h']]]
 ];

@@ -1,4 +1,4 @@
 var dir_d594428982b74b37919ba61f9d6aaf0c =
 [
-    [ "trail-firmware-stm32", "dir_ddafcdfa59c42fb7d090691164d26d27.html", "dir_ddafcdfa59c42fb7d090691164d26d27" ]
+    [ "Trail-STM32", "dir_2fd0ef725d28f131f7e38ab1ea28a831.html", "dir_2fd0ef725d28f131f7e38ab1ea28a831" ]
 ];

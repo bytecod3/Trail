@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['c_3a2004_20compliance_20exceptions_0',['MISRA-C:2004 Compliance Exceptions',['../d1/d5b/_c_m_s_i_s__m_i_s_r_a__exceptions.html',1,'']]],
-  ['compliance_20exceptions_1',['MISRA-C:2004 Compliance Exceptions',['../d1/d5b/_c_m_s_i_s__m_i_s_r_a__exceptions.html',1,'']]]
+  ['cmsis_5fos_20h_0',['Header File Template: cmsis_os.h',['../d8/dd7/cmsis_os_h.html',1,'']]]
 ];

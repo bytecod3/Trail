@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Trail: core/esp32/esp32-devkit-doit/src/FSM.h File Reference</title>
+<title>Trail: core/esp32/esp32-c3hf4/src/FSM.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -111,12 +111,14 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="#a5f847547d1654ba6664de98abb0ee37caf4085665d5f95b095fe4aa0e05c7295e">STATE_WIFI_PROVISION_REQUEST</a>
 , <a class="el" href="#a5f847547d1654ba6664de98abb0ee37caef9dec4ce90acff959f251eede653986">STATE_WIFI_WAITING_PROVISION</a>
 , <a class="el" href="#a5f847547d1654ba6664de98abb0ee37ca9620bb950d91ea70d2c5015fbc39dbc7">STATE_WIFI_PROVISION_TIMEOUT</a>
-, <a class="el" href="#a5f847547d1654ba6664de98abb0ee37cac0f1a57ec19b589a9479429f445ecefb">STATE_WIFI_CONNECTING</a>
+, <a class="el" href="#a5f847547d1654ba6664de98abb0ee37caa9626db3d70d048c561a59fd4f4840f6">STATE_WIFI_CONNECT</a>
 , <br />
-&#160;&#160;<a class="el" href="#a5f847547d1654ba6664de98abb0ee37caab1618012cfead98df0fe39ed5fe1203">STATE_WIFI_CONNECTED</a>
+&#160;&#160;<a class="el" href="#a5f847547d1654ba6664de98abb0ee37cac0f1a57ec19b589a9479429f445ecefb">STATE_WIFI_CONNECTING</a>
+, <a class="el" href="#a5f847547d1654ba6664de98abb0ee37caab1618012cfead98df0fe39ed5fe1203">STATE_WIFI_CONNECTED</a>
 , <a class="el" href="#a5f847547d1654ba6664de98abb0ee37cad5453faadc208d7aa87c7d0d54db3eaf">STATE_WIFI_CONNECTION_TIMEOUT</a>
 , <a class="el" href="#a5f847547d1654ba6664de98abb0ee37ca23939655648d27f162c232d827fd95ca">STATE_WIFI_CONNECTION_ERROR</a>
-, <a class="el" href="#a5f847547d1654ba6664de98abb0ee37ca54a3435fcc191de953e214b1526d1ec7">STATE_WIFI_DISCONNECTED</a>
+, <br />
+&#160;&#160;<a class="el" href="#a5f847547d1654ba6664de98abb0ee37ca54a3435fcc191de953e214b1526d1ec7">STATE_WIFI_DISCONNECTED</a>
 <br />
  }</td></tr>
 <tr class="memdesc:a5f847547d1654ba6664de98abb0ee37c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finite state machine states for WIFI connection system.  <a href="#a5f847547d1654ba6664de98abb0ee37c">More...</a><br /></td></tr>
@@ -146,7 +148,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Finite state machine states for WIFI connection system. </p>
-<p>This struct contains all the possible states that the WIFI subsystem can be in at a given time during the operation of the device</p><ul>
+<p>Finite state machine states This enum contains all the possible states that the WIFI subsystem can be in at a given time during the operation of the device.</p>
+<p>This enum contains all the possible states that the WIFI subsystem can be in at a given time during the operation of the device</p><ul>
 <li></li>
 </ul>
 <table class="fieldtable">
@@ -155,6 +158,8 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a5f847547d1654ba6664de98abb0ee37caef9dec4ce90acff959f251eede653986" name="a5f847547d1654ba6664de98abb0ee37caef9dec4ce90acff959f251eede653986"></a>STATE_WIFI_WAITING_PROVISION&#160;</td><td class="fielddoc"><p>waiting for provision of wifi credentials </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a5f847547d1654ba6664de98abb0ee37ca9620bb950d91ea70d2c5015fbc39dbc7" name="a5f847547d1654ba6664de98abb0ee37ca9620bb950d91ea70d2c5015fbc39dbc7"></a>STATE_WIFI_PROVISION_TIMEOUT&#160;</td><td class="fielddoc"><p>waited too long for credentials </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5f847547d1654ba6664de98abb0ee37caa9626db3d70d048c561a59fd4f4840f6" name="a5f847547d1654ba6664de98abb0ee37caa9626db3d70d048c561a59fd4f4840f6"></a>STATE_WIFI_CONNECT&#160;</td><td class="fielddoc"><p>start connecting to WIFI </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a5f847547d1654ba6664de98abb0ee37cac0f1a57ec19b589a9479429f445ecefb" name="a5f847547d1654ba6664de98abb0ee37cac0f1a57ec19b589a9479429f445ecefb"></a>STATE_WIFI_CONNECTING&#160;</td><td class="fielddoc"><p>attempting wifi connection </p>
 </td></tr>
@@ -205,7 +210,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a href="../../dir_826bc96ec0e4a70502e980c3a255c580.html">esp32</a></li><li class="navelem"><a href="../../dir_868e88984f21f857b77f8088504e4e68.html">esp32-devkit-doit</a></li><li class="navelem"><a href="../../dir_6ad4f3bc2b3017109d5b794c4e4b4be2.html">src</a></li><li class="navelem"><a href="../../d6/d6f/_f_s_m_8h.html">FSM.h</a></li>
+    <li class="navelem"><a href="../../dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a href="../../dir_826bc96ec0e4a70502e980c3a255c580.html">esp32</a></li><li class="navelem"><a href="../../dir_4c0cbde03c27cf5637a4cc5614d449a6.html">esp32-c3hf4</a></li><li class="navelem"><a href="../../dir_8a6bc0736f833217a02043ca8b0bdf88.html">src</a></li><li class="navelem"><a href="../../d6/d6f/_f_s_m_8h.html">FSM.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

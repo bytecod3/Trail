@@ -102,9 +102,14 @@ $(function(){initNavTree('d1/d7d/core_2stm32_2trail-firmware-stm32_2_core_2_src_
 
 <p>: Main program body  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="../../d4/dbf/main_8h_source.html">main.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;main.h&quot;</code><br />
+<code>#include &quot;cmsis_os.h&quot;</code><br />
 <code>#include &quot;string.h&quot;</code><br />
 <code>#include &quot;stdio.h&quot;</code><br />
+<code>#include &quot;stdlib.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d4/d12/stm32_2trail-firmware-stm32_2_core_2_src_2config_8h_source.html">config.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../da/d32/stm32_2trail-firmware-stm32_2_core_2_src_2globals_8h_source.html">globals.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d4/d31/trail-firmware-stm32_2_core_2_src_2state-machine_8h_source.html">state-machine.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -118,18 +123,53 @@ Functions</h2></td></tr>
 <tr class="memdesc:a62f4b77e20bccafe98a183771749c20c"><td class="mdescLeft">&#160;</td><td class="mdescRight">USART1 Initialization Function.  <br /></td></tr>
 <tr class="memitem:a4230d11f81d0b16e112f1cc3f40cb42f" id="r_a4230d11f81d0b16e112f1cc3f40cb42f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4230d11f81d0b16e112f1cc3f40cb42f">MX_I2C1_Init</a> (void)</td></tr>
 <tr class="memdesc:a4230d11f81d0b16e112f1cc3f40cb42f"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C1 Initialization Function.  <br /></td></tr>
+<tr class="memitem:a09c6bcc631f01a6dbfbd37efef07a2d2" id="r_a09c6bcc631f01a6dbfbd37efef07a2d2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09c6bcc631f01a6dbfbd37efef07a2d2">MX_USART6_UART_Init</a> (void)</td></tr>
+<tr class="memdesc:a09c6bcc631f01a6dbfbd37efef07a2d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">USART6 Initialization Function.  <br /></td></tr>
+<tr class="memitem:a28dbf2494083ac5f39daa87bf09e4eb3" id="r_a28dbf2494083ac5f39daa87bf09e4eb3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28dbf2494083ac5f39daa87bf09e4eb3">MX_SPI1_Init</a> (void)</td></tr>
+<tr class="memdesc:a28dbf2494083ac5f39daa87bf09e4eb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI1 Initialization Function.  <br /></td></tr>
+<tr class="memitem:aaa163e37853e6fc971474824d9f655ca" id="r_aaa163e37853e6fc971474824d9f655ca"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa163e37853e6fc971474824d9f655ca">MX_ADC1_Init</a> (void)</td></tr>
+<tr class="memdesc:aaa163e37853e6fc971474824d9f655ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC1 Initialization Function.  <br /></td></tr>
+<tr class="memitem:a016544463b4842ced7191baf8f449cea" id="r_a016544463b4842ced7191baf8f449cea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a016544463b4842ced7191baf8f449cea">StartDefaultTask</a> (void const *argument)</td></tr>
+<tr class="memdesc:a016544463b4842ced7191baf8f449cea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function implementing the defaultTask thread.  <br /></td></tr>
+<tr class="memitem:a4025499d707bf2e2746c59d7b373682a" id="r_a4025499d707bf2e2746c59d7b373682a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4025499d707bf2e2746c59d7b373682a">xTaskReadGPS</a> (void const *pvParamaters)</td></tr>
+<tr class="memitem:a851dd53a7675b9b625554615ad426b95" id="r_a851dd53a7675b9b625554615ad426b95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a851dd53a7675b9b625554615ad426b95">xTaskReadIMU</a> (void const *pvParameters)</td></tr>
+<tr class="memitem:af40f7b5bbc0046475a3e1c4908133ad9" id="r_af40f7b5bbc0046475a3e1c4908133ad9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af40f7b5bbc0046475a3e1c4908133ad9">xTaskReadCompass</a> (void const *pvParameters)</td></tr>
+<tr class="memitem:a1ea9743cd6f653fd83c79a4ef7a58169" id="r_a1ea9743cd6f653fd83c79a4ef7a58169"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ea9743cd6f653fd83c79a4ef7a58169">xTaskReadBMP</a> (void const *pvParameters)</td></tr>
+<tr class="memitem:a964c86c82dda9759b2a86efbd5d487a1" id="r_a964c86c82dda9759b2a86efbd5d487a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a964c86c82dda9759b2a86efbd5d487a1">xTaskReadESPWIFI</a> (void const *pvParameters)</td></tr>
+<tr class="memdesc:a964c86c82dda9759b2a86efbd5d487a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This task reads the data received from ESP32 and extracts the WIFI state.  <br /></td></tr>
+<tr class="memitem:af67c8fdc9bdda571d6812b1bb618294d" id="r_af67c8fdc9bdda571d6812b1bb618294d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af67c8fdc9bdda571d6812b1bb618294d">xTaskSensorFusion</a> (void const *pvParameters)</td></tr>
+<tr class="memitem:a1b1d3c61ab674c638cce87118ca8f3fc" id="r_a1b1d3c61ab674c638cce87118ca8f3fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b1d3c61ab674c638cce87118ca8f3fc">xTaskDisplayUpdate</a> (void const *pvParameters)</td></tr>
+<tr class="memitem:a4512ff6add4566bdc577df1ec3d95907" id="r_a4512ff6add4566bdc577df1ec3d95907"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4512ff6add4566bdc577df1ec3d95907">xTaskReadKeypad</a> (void const *pvParameters)</td></tr>
+<tr class="memitem:aad0fa3d1a1ddef595b3becebde87de84" id="r_aad0fa3d1a1ddef595b3becebde87de84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad0fa3d1a1ddef595b3becebde87de84">xTaskLEDsUpdate</a> (void const *pvParameters)</td></tr>
 <tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe" id="r_a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
 <tr class="memdesc:a840291bc02cba5474a4cb46a9b9566fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The application entry point.  <br /></td></tr>
 <tr class="memitem:a441aaa18a2c5d067832ee7356aca014c" id="r_a441aaa18a2c5d067832ee7356aca014c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a441aaa18a2c5d067832ee7356aca014c">ButtonCheckTask</a> (void *pvParameters)</td></tr>
 <tr class="memdesc:a441aaa18a2c5d067832ee7356aca014c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This task is used to monitor for button presses.  <br /></td></tr>
+<tr class="memitem:a8a3b0ad512a6e6c6157440b68d395eac" id="r_a8a3b0ad512a6e6c6157440b68d395eac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a3b0ad512a6e6c6157440b68d395eac">HAL_TIM_PeriodElapsedCallback</a> (TIM_HandleTypeDef *htim)</td></tr>
+<tr class="memdesc:a8a3b0ad512a6e6c6157440b68d395eac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Period elapsed callback in non blocking mode.  <br /></td></tr>
 <tr class="memitem:a1730ffe1e560465665eb47d9264826f9" id="r_a1730ffe1e560465665eb47d9264826f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a> (void)</td></tr>
 <tr class="memdesc:a1730ffe1e560465665eb47d9264826f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is executed in case of error occurrence.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a22b804736f5648d52f639b2647d4ed13" id="r_a22b804736f5648d52f639b2647d4ed13"><td class="memItemLeft" align="right" valign="top">ADC_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22b804736f5648d52f639b2647d4ed13">hadc1</a></td></tr>
 <tr class="memitem:af7b2c26e44dadaaa798a5c3d82914ba7" id="r_af7b2c26e44dadaaa798a5c3d82914ba7"><td class="memItemLeft" align="right" valign="top">I2C_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7b2c26e44dadaaa798a5c3d82914ba7">hi2c1</a></td></tr>
+<tr class="memitem:a9c6222bae4d0328dd843ae099623b40b" id="r_a9c6222bae4d0328dd843ae099623b40b"><td class="memItemLeft" align="right" valign="top">SPI_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c6222bae4d0328dd843ae099623b40b">hspi1</a></td></tr>
 <tr class="memitem:a2cf715bef37f7e8ef385a30974a5f0d5" id="r_a2cf715bef37f7e8ef385a30974a5f0d5"><td class="memItemLeft" align="right" valign="top">UART_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2cf715bef37f7e8ef385a30974a5f0d5">huart1</a></td></tr>
 <tr class="memitem:aa9479c261d65eecedd3d9582f7f0f89c" id="r_aa9479c261d65eecedd3d9582f7f0f89c"><td class="memItemLeft" align="right" valign="top">UART_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9479c261d65eecedd3d9582f7f0f89c">huart2</a></td></tr>
+<tr class="memitem:a38905dda1d2fbff006c69db48eddba9d" id="r_a38905dda1d2fbff006c69db48eddba9d"><td class="memItemLeft" align="right" valign="top">UART_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38905dda1d2fbff006c69db48eddba9d">huart6</a></td></tr>
+<tr class="memitem:aa658fe134a5d1309d7a15c8116fa142c" id="r_aa658fe134a5d1309d7a15c8116fa142c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d8d/trail-firmware-stm32_2_middlewares_2_third___party_2_free_r_t_o_s_2_source_2_c_m_s_i_s___r_t_o_s_2cmsis__os_8h.html#a217fdd2811440d39a6e8c868a0b8ec82">osThreadId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa658fe134a5d1309d7a15c8116fa142c">defaultTaskHandle</a></td></tr>
+<tr class="memitem:ad215bb53e7efcdf04f7bda76221123bd" id="r_ad215bb53e7efcdf04f7bda76221123bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d8d/trail-firmware-stm32_2_middlewares_2_third___party_2_free_r_t_o_s_2_source_2_c_m_s_i_s___r_t_o_s_2cmsis__os_8h.html#a217fdd2811440d39a6e8c868a0b8ec82">osThreadId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad215bb53e7efcdf04f7bda76221123bd">xTaskReadGPSHandle</a></td></tr>
+<tr class="memitem:af735cbc7765091f7128a0d50ff15949f" id="r_af735cbc7765091f7128a0d50ff15949f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d8d/trail-firmware-stm32_2_middlewares_2_third___party_2_free_r_t_o_s_2_source_2_c_m_s_i_s___r_t_o_s_2cmsis__os_8h.html#a217fdd2811440d39a6e8c868a0b8ec82">osThreadId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af735cbc7765091f7128a0d50ff15949f">xTaskReadIMUHandle</a></td></tr>
+<tr class="memitem:a84762846fcdd7dc9071418666276f1b4" id="r_a84762846fcdd7dc9071418666276f1b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d8d/trail-firmware-stm32_2_middlewares_2_third___party_2_free_r_t_o_s_2_source_2_c_m_s_i_s___r_t_o_s_2cmsis__os_8h.html#a217fdd2811440d39a6e8c868a0b8ec82">osThreadId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84762846fcdd7dc9071418666276f1b4">xTaskReadCompassHandle</a></td></tr>
+<tr class="memitem:ab8af18147623e33b6138a866813201c8" id="r_ab8af18147623e33b6138a866813201c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d8d/trail-firmware-stm32_2_middlewares_2_third___party_2_free_r_t_o_s_2_source_2_c_m_s_i_s___r_t_o_s_2cmsis__os_8h.html#a217fdd2811440d39a6e8c868a0b8ec82">osThreadId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8af18147623e33b6138a866813201c8">xTaskReadBMPHandle</a></td></tr>
+<tr class="memitem:ae810aa8aa2998e9c16f442edc8e19ef6" id="r_ae810aa8aa2998e9c16f442edc8e19ef6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d8d/trail-firmware-stm32_2_middlewares_2_third___party_2_free_r_t_o_s_2_source_2_c_m_s_i_s___r_t_o_s_2cmsis__os_8h.html#a217fdd2811440d39a6e8c868a0b8ec82">osThreadId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae810aa8aa2998e9c16f442edc8e19ef6">xTaskReadESPWIFIHandle</a></td></tr>
+<tr class="memitem:ac17f018975853e55fdd027fd6e48086f" id="r_ac17f018975853e55fdd027fd6e48086f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d8d/trail-firmware-stm32_2_middlewares_2_third___party_2_free_r_t_o_s_2_source_2_c_m_s_i_s___r_t_o_s_2cmsis__os_8h.html#a217fdd2811440d39a6e8c868a0b8ec82">osThreadId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac17f018975853e55fdd027fd6e48086f">xTaskSensorFusionHandle</a></td></tr>
+<tr class="memitem:aa69782eb459c99d400ec60be6549b78c" id="r_aa69782eb459c99d400ec60be6549b78c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d8d/trail-firmware-stm32_2_middlewares_2_third___party_2_free_r_t_o_s_2_source_2_c_m_s_i_s___r_t_o_s_2cmsis__os_8h.html#a217fdd2811440d39a6e8c868a0b8ec82">osThreadId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa69782eb459c99d400ec60be6549b78c">xTaskDisplayUpdateHandle</a></td></tr>
+<tr class="memitem:af87964667f68f2743a028463f7a6792a" id="r_af87964667f68f2743a028463f7a6792a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d8d/trail-firmware-stm32_2_middlewares_2_third___party_2_free_r_t_o_s_2_source_2_c_m_s_i_s___r_t_o_s_2cmsis__os_8h.html#a217fdd2811440d39a6e8c868a0b8ec82">osThreadId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af87964667f68f2743a028463f7a6792a">xTaskReadKeypadHandle</a></td></tr>
+<tr class="memitem:a289116041a0d2387872f54a3fc58d4fb" id="r_a289116041a0d2387872f54a3fc58d4fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d8d/trail-firmware-stm32_2_middlewares_2_third___party_2_free_r_t_o_s_2_source_2_c_m_s_i_s___r_t_o_s_2cmsis__os_8h.html#a217fdd2811440d39a6e8c868a0b8ec82">osThreadId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a289116041a0d2387872f54a3fc58d4fb">xTaskLEDsUpdateHandle</a></td></tr>
+<tr class="memitem:a8a1db55eb0c354294267fe6f1da08ea1" id="r_a8a1db55eb0c354294267fe6f1da08ea1"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a1db55eb0c354294267fe6f1da08ea1">activate_wifi</a> = 1</td></tr>
+<tr class="memitem:a389cd751d0daaa3ca62cf13b0ca7324d" id="r_a389cd751d0daaa3ca62cf13b0ca7324d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d31/trail-firmware-stm32_2_core_2_src_2state-machine_8h.html#afd6fa0c65cb9ed4611586ef91601c48a">state_type_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a389cd751d0daaa3ca62cf13b0ca7324d">wifi_sm_state</a> = <a class="el" href="../../d6/d6f/_f_s_m_8h.html#a5f847547d1654ba6664de98abb0ee37caa9626db3d70d048c561a59fd4f4840f6">STATE_WIFI_CONNECT</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>: Main program body </p>
@@ -187,6 +227,38 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a8a3b0ad512a6e6c6157440b68d395eac" name="a8a3b0ad512a6e6c6157440b68d395eac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a3b0ad512a6e6c6157440b68d395eac">&#9670;&#160;</a></span>HAL_TIM_PeriodElapsedCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HAL_TIM_PeriodElapsedCallback </td>
+          <td>(</td>
+          <td class="paramtype">TIM_HandleTypeDef *</td>          <td class="paramname"><span class="paramname"><em>htim</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Period elapsed callback in non blocking mode. </p>
+<dl class="section note"><dt>Note</dt><dd>This function is called when TIM1 interrupt took place, inside HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment a global variable "uwTick" used as application time base. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">htim</td><td>: TIM handle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a840291bc02cba5474a4cb46a9b9566fe" name="a840291bc02cba5474a4cb46a9b9566fe"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a840291bc02cba5474a4cb46a9b9566fe">&#9670;&#160;</a></span>main()</h2>
 
@@ -209,6 +281,47 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aaa163e37853e6fc971474824d9f655ca" name="aaa163e37853e6fc971474824d9f655ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa163e37853e6fc971474824d9f655ca">&#9670;&#160;</a></span>MX_ADC1_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MX_ADC1_Init </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ADC1 Initialization Function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)</p>
+<p>Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.</p>
 
 </div>
 </div>
@@ -275,6 +388,45 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>I2C1 Initialization Function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a28dbf2494083ac5f39daa87bf09e4eb3" name="a28dbf2494083ac5f39daa87bf09e4eb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28dbf2494083ac5f39daa87bf09e4eb3">&#9670;&#160;</a></span>MX_SPI1_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MX_SPI1_Init </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SPI1 Initialization Function. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">None</td><td></td></tr>
@@ -368,6 +520,76 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a09c6bcc631f01a6dbfbd37efef07a2d2" name="a09c6bcc631f01a6dbfbd37efef07a2d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09c6bcc631f01a6dbfbd37efef07a2d2">&#9670;&#160;</a></span>MX_USART6_UART_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MX_USART6_UART_Init </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>USART6 Initialization Function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a016544463b4842ced7191baf8f449cea" name="a016544463b4842ced7191baf8f449cea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a016544463b4842ced7191baf8f449cea">&#9670;&#160;</a></span>StartDefaultTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StartDefaultTask </td>
+          <td>(</td>
+          <td class="paramtype">void const *</td>          <td class="paramname"><span class="paramname"><em>argument</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function implementing the defaultTask thread. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argument</td><td>Not used </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a70af21c671abfcc773614a9a4f63d920" name="a70af21c671abfcc773614a9a4f63d920"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70af21c671abfcc773614a9a4f63d920">&#9670;&#160;</a></span>SystemClock_Config()</h2>
 
@@ -396,7 +618,205 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a1b1d3c61ab674c638cce87118ca8f3fc" name="a1b1d3c61ab674c638cce87118ca8f3fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b1d3c61ab674c638cce87118ca8f3fc">&#9670;&#160;</a></span>xTaskDisplayUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xTaskDisplayUpdate </td>
+          <td>(</td>
+          <td class="paramtype">void const *</td>          <td class="paramname"><span class="paramname"><em>pvParameters</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aad0fa3d1a1ddef595b3becebde87de84" name="aad0fa3d1a1ddef595b3becebde87de84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad0fa3d1a1ddef595b3becebde87de84">&#9670;&#160;</a></span>xTaskLEDsUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xTaskLEDsUpdate </td>
+          <td>(</td>
+          <td class="paramtype">void const *</td>          <td class="paramname"><span class="paramname"><em>pvParameters</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ea9743cd6f653fd83c79a4ef7a58169" name="a1ea9743cd6f653fd83c79a4ef7a58169"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ea9743cd6f653fd83c79a4ef7a58169">&#9670;&#160;</a></span>xTaskReadBMP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xTaskReadBMP </td>
+          <td>(</td>
+          <td class="paramtype">void const *</td>          <td class="paramname"><span class="paramname"><em>pvParameters</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af40f7b5bbc0046475a3e1c4908133ad9" name="af40f7b5bbc0046475a3e1c4908133ad9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af40f7b5bbc0046475a3e1c4908133ad9">&#9670;&#160;</a></span>xTaskReadCompass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xTaskReadCompass </td>
+          <td>(</td>
+          <td class="paramtype">void const *</td>          <td class="paramname"><span class="paramname"><em>pvParameters</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a964c86c82dda9759b2a86efbd5d487a1" name="a964c86c82dda9759b2a86efbd5d487a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a964c86c82dda9759b2a86efbd5d487a1">&#9670;&#160;</a></span>xTaskReadESPWIFI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xTaskReadESPWIFI </td>
+          <td>(</td>
+          <td class="paramtype">void const *</td>          <td class="paramname"><span class="paramname"><em>pvParameters</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This task reads the data received from ESP32 and extracts the WIFI state. </p>
+
+</div>
+</div>
+<a id="a4025499d707bf2e2746c59d7b373682a" name="a4025499d707bf2e2746c59d7b373682a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4025499d707bf2e2746c59d7b373682a">&#9670;&#160;</a></span>xTaskReadGPS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xTaskReadGPS </td>
+          <td>(</td>
+          <td class="paramtype">void const *</td>          <td class="paramname"><span class="paramname"><em>pvParamaters</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create the task function prototypes </p>
+
+</div>
+</div>
+<a id="a851dd53a7675b9b625554615ad426b95" name="a851dd53a7675b9b625554615ad426b95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a851dd53a7675b9b625554615ad426b95">&#9670;&#160;</a></span>xTaskReadIMU()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xTaskReadIMU </td>
+          <td>(</td>
+          <td class="paramtype">void const *</td>          <td class="paramname"><span class="paramname"><em>pvParameters</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4512ff6add4566bdc577df1ec3d95907" name="a4512ff6add4566bdc577df1ec3d95907"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4512ff6add4566bdc577df1ec3d95907">&#9670;&#160;</a></span>xTaskReadKeypad()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xTaskReadKeypad </td>
+          <td>(</td>
+          <td class="paramtype">void const *</td>          <td class="paramname"><span class="paramname"><em>pvParameters</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af67c8fdc9bdda571d6812b1bb618294d" name="af67c8fdc9bdda571d6812b1bb618294d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af67c8fdc9bdda571d6812b1bb618294d">&#9670;&#160;</a></span>xTaskSensorFusion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xTaskSensorFusion </td>
+          <td>(</td>
+          <td class="paramtype">void const *</td>          <td class="paramname"><span class="paramname"><em>pvParameters</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
+<a id="a8a1db55eb0c354294267fe6f1da08ea1" name="a8a1db55eb0c354294267fe6f1da08ea1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a1db55eb0c354294267fe6f1da08ea1">&#9670;&#160;</a></span>activate_wifi</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t activate_wifi = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa658fe134a5d1309d7a15c8116fa142c" name="aa658fe134a5d1309d7a15c8116fa142c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa658fe134a5d1309d7a15c8116fa142c">&#9670;&#160;</a></span>defaultTaskHandle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d8d/trail-firmware-stm32_2_middlewares_2_third___party_2_free_r_t_o_s_2_source_2_c_m_s_i_s___r_t_o_s_2cmsis__os_8h.html#a217fdd2811440d39a6e8c868a0b8ec82">osThreadId</a> defaultTaskHandle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22b804736f5648d52f639b2647d4ed13" name="a22b804736f5648d52f639b2647d4ed13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22b804736f5648d52f639b2647d4ed13">&#9670;&#160;</a></span>hadc1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ADC_HandleTypeDef hadc1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="af7b2c26e44dadaaa798a5c3d82914ba7" name="af7b2c26e44dadaaa798a5c3d82914ba7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af7b2c26e44dadaaa798a5c3d82914ba7">&#9670;&#160;</a></span>hi2c1</h2>
 
@@ -405,6 +825,20 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">I2C_HandleTypeDef hi2c1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9c6222bae4d0328dd843ae099623b40b" name="a9c6222bae4d0328dd843ae099623b40b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c6222bae4d0328dd843ae099623b40b">&#9670;&#160;</a></span>hspi1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPI_HandleTypeDef hspi1</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -436,6 +870,169 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a38905dda1d2fbff006c69db48eddba9d" name="a38905dda1d2fbff006c69db48eddba9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38905dda1d2fbff006c69db48eddba9d">&#9670;&#160;</a></span>huart6</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UART_HandleTypeDef huart6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a389cd751d0daaa3ca62cf13b0ca7324d" name="a389cd751d0daaa3ca62cf13b0ca7324d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a389cd751d0daaa3ca62cf13b0ca7324d">&#9670;&#160;</a></span>wifi_sm_state</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d31/trail-firmware-stm32_2_core_2_src_2state-machine_8h.html#afd6fa0c65cb9ed4611586ef91601c48a">state_type_t</a> wifi_sm_state = <a class="el" href="../../d6/d6f/_f_s_m_8h.html#a5f847547d1654ba6664de98abb0ee37caa9626db3d70d048c561a59fd4f4840f6">STATE_WIFI_CONNECT</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa69782eb459c99d400ec60be6549b78c" name="aa69782eb459c99d400ec60be6549b78c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa69782eb459c99d400ec60be6549b78c">&#9670;&#160;</a></span>xTaskDisplayUpdateHandle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d8d/trail-firmware-stm32_2_middlewares_2_third___party_2_free_r_t_o_s_2_source_2_c_m_s_i_s___r_t_o_s_2cmsis__os_8h.html#a217fdd2811440d39a6e8c868a0b8ec82">osThreadId</a> xTaskDisplayUpdateHandle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Task to update the display </p>
+
+</div>
+</div>
+<a id="a289116041a0d2387872f54a3fc58d4fb" name="a289116041a0d2387872f54a3fc58d4fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a289116041a0d2387872f54a3fc58d4fb">&#9670;&#160;</a></span>xTaskLEDsUpdateHandle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d8d/trail-firmware-stm32_2_middlewares_2_third___party_2_free_r_t_o_s_2_source_2_c_m_s_i_s___r_t_o_s_2cmsis__os_8h.html#a217fdd2811440d39a6e8c868a0b8ec82">osThreadId</a> xTaskLEDsUpdateHandle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Task to read update LEDs </p>
+
+</div>
+</div>
+<a id="ab8af18147623e33b6138a866813201c8" name="ab8af18147623e33b6138a866813201c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8af18147623e33b6138a866813201c8">&#9670;&#160;</a></span>xTaskReadBMPHandle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d8d/trail-firmware-stm32_2_middlewares_2_third___party_2_free_r_t_o_s_2_source_2_c_m_s_i_s___r_t_o_s_2cmsis__os_8h.html#a217fdd2811440d39a6e8c868a0b8ec82">osThreadId</a> xTaskReadBMPHandle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Task to read BMP </p>
+
+</div>
+</div>
+<a id="a84762846fcdd7dc9071418666276f1b4" name="a84762846fcdd7dc9071418666276f1b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84762846fcdd7dc9071418666276f1b4">&#9670;&#160;</a></span>xTaskReadCompassHandle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d8d/trail-firmware-stm32_2_middlewares_2_third___party_2_free_r_t_o_s_2_source_2_c_m_s_i_s___r_t_o_s_2cmsis__os_8h.html#a217fdd2811440d39a6e8c868a0b8ec82">osThreadId</a> xTaskReadCompassHandle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Task to read compass </p>
+
+</div>
+</div>
+<a id="ae810aa8aa2998e9c16f442edc8e19ef6" name="ae810aa8aa2998e9c16f442edc8e19ef6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae810aa8aa2998e9c16f442edc8e19ef6">&#9670;&#160;</a></span>xTaskReadESPWIFIHandle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d8d/trail-firmware-stm32_2_middlewares_2_third___party_2_free_r_t_o_s_2_source_2_c_m_s_i_s___r_t_o_s_2cmsis__os_8h.html#a217fdd2811440d39a6e8c868a0b8ec82">osThreadId</a> xTaskReadESPWIFIHandle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Task to read ESP serial data </p>
+
+</div>
+</div>
+<a id="ad215bb53e7efcdf04f7bda76221123bd" name="ad215bb53e7efcdf04f7bda76221123bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad215bb53e7efcdf04f7bda76221123bd">&#9670;&#160;</a></span>xTaskReadGPSHandle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d8d/trail-firmware-stm32_2_middlewares_2_third___party_2_free_r_t_o_s_2_source_2_c_m_s_i_s___r_t_o_s_2cmsis__os_8h.html#a217fdd2811440d39a6e8c868a0b8ec82">osThreadId</a> xTaskReadGPSHandle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Private task handles Task to read GPS </p>
+
+</div>
+</div>
+<a id="af735cbc7765091f7128a0d50ff15949f" name="af735cbc7765091f7128a0d50ff15949f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af735cbc7765091f7128a0d50ff15949f">&#9670;&#160;</a></span>xTaskReadIMUHandle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d8d/trail-firmware-stm32_2_middlewares_2_third___party_2_free_r_t_o_s_2_source_2_c_m_s_i_s___r_t_o_s_2cmsis__os_8h.html#a217fdd2811440d39a6e8c868a0b8ec82">osThreadId</a> xTaskReadIMUHandle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Task to read IMU </p>
+
+</div>
+</div>
+<a id="af87964667f68f2743a028463f7a6792a" name="af87964667f68f2743a028463f7a6792a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af87964667f68f2743a028463f7a6792a">&#9670;&#160;</a></span>xTaskReadKeypadHandle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d8d/trail-firmware-stm32_2_middlewares_2_third___party_2_free_r_t_o_s_2_source_2_c_m_s_i_s___r_t_o_s_2cmsis__os_8h.html#a217fdd2811440d39a6e8c868a0b8ec82">osThreadId</a> xTaskReadKeypadHandle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Task to read keypad button </p>
+
+</div>
+</div>
+<a id="ac17f018975853e55fdd027fd6e48086f" name="ac17f018975853e55fdd027fd6e48086f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac17f018975853e55fdd027fd6e48086f">&#9670;&#160;</a></span>xTaskSensorFusionHandle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d8d/trail-firmware-stm32_2_middlewares_2_third___party_2_free_r_t_o_s_2_source_2_c_m_s_i_s___r_t_o_s_2cmsis__os_8h.html#a217fdd2811440d39a6e8c868a0b8ec82">osThreadId</a> xTaskSensorFusionHandle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Task to perform sensor fusion </p>
 
 </div>
 </div>

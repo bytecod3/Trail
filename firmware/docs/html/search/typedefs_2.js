@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['itstatus_0',['ITStatus',['../d9/d3e/group___exported__types.html#ga39d4411201fb731279ad5a409b2b80d7',1,'stm32f4xx.h']]]
+  ['eventbits_5ft_0',['EventBits_t',['../db/d8b/event__groups_8h.html#ab2f21b93db0b2a0ab64d7a81ff32ac2e',1,'event_groups.h']]],
+  ['eventgroup_5ft_1',['EventGroup_t',['../d1/d99/event__groups_8c.html#ae4fc9408a7fab90c6296379ff3cb0f11',1,'event_groups.c']]],
+  ['eventgrouphandle_5ft_2',['EventGroupHandle_t',['../db/d8b/event__groups_8h.html#acab96e0b6a5cab7f7b29822b79cc78ed',1,'event_groups.h']]]
 ];

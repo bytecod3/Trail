@@ -1,11 +1,17 @@
 var searchData=
 [
-  ['state_5fwifi_5fconnected_0',['STATE_WIFI_CONNECTED',['../d6/d6f/_f_s_m_8h.html#a5f847547d1654ba6664de98abb0ee37caab1618012cfead98df0fe39ed5fe1203',1,'FSM.h']]],
-  ['state_5fwifi_5fconnecting_1',['STATE_WIFI_CONNECTING',['../d6/d6f/_f_s_m_8h.html#a5f847547d1654ba6664de98abb0ee37cac0f1a57ec19b589a9479429f445ecefb',1,'FSM.h']]],
-  ['state_5fwifi_5fconnection_5ferror_2',['STATE_WIFI_CONNECTION_ERROR',['../d6/d6f/_f_s_m_8h.html#a5f847547d1654ba6664de98abb0ee37ca23939655648d27f162c232d827fd95ca',1,'FSM.h']]],
-  ['state_5fwifi_5fconnection_5ftimeout_3',['STATE_WIFI_CONNECTION_TIMEOUT',['../d6/d6f/_f_s_m_8h.html#a5f847547d1654ba6664de98abb0ee37cad5453faadc208d7aa87c7d0d54db3eaf',1,'FSM.h']]],
-  ['state_5fwifi_5fdisconnected_4',['STATE_WIFI_DISCONNECTED',['../d6/d6f/_f_s_m_8h.html#a5f847547d1654ba6664de98abb0ee37ca54a3435fcc191de953e214b1526d1ec7',1,'FSM.h']]],
-  ['state_5fwifi_5fprovision_5frequest_5',['STATE_WIFI_PROVISION_REQUEST',['../d6/d6f/_f_s_m_8h.html#a5f847547d1654ba6664de98abb0ee37caf4085665d5f95b095fe4aa0e05c7295e',1,'FSM.h']]],
-  ['state_5fwifi_5fprovision_5ftimeout_6',['STATE_WIFI_PROVISION_TIMEOUT',['../d6/d6f/_f_s_m_8h.html#a5f847547d1654ba6664de98abb0ee37ca9620bb950d91ea70d2c5015fbc39dbc7',1,'FSM.h']]],
-  ['state_5fwifi_5fwaiting_5fprovision_7',['STATE_WIFI_WAITING_PROVISION',['../d6/d6f/_f_s_m_8h.html#a5f847547d1654ba6664de98abb0ee37caef9dec4ce90acff959f251eede653986',1,'FSM.h']]]
+  ['eabortsleep_0',['eAbortSleep',['../db/da4/task_8h.html#afd168a210ae0f2fb0fca242860a8178eaba7b1a394c63faa14a85dbb191f1c6f9',1,'task.h']]],
+  ['eblocked_1',['eBlocked',['../db/da4/task_8h.html#a1749369458e2282a22e862a619a3892cad23d72c68f43b6fff4962ad4154766af',1,'task.h']]],
+  ['edeleted_2',['eDeleted',['../db/da4/task_8h.html#a1749369458e2282a22e862a619a3892cacef5c6e771d3a07f656e07a13a20ba35',1,'task.h']]],
+  ['eincrement_3',['eIncrement',['../db/da4/task_8h.html#ae8abc4f7da5b6880467daafbf19cd233a04fb0e98d2400e4cd28f1593bc868822',1,'task.h']]],
+  ['einvalid_4',['eInvalid',['../db/da4/task_8h.html#a1749369458e2282a22e862a619a3892cab32c771bb60dc8b502f65b81eef3bd86',1,'task.h']]],
+  ['enoaction_5',['eNoAction',['../db/da4/task_8h.html#ae8abc4f7da5b6880467daafbf19cd233abac2b17ab15444724b6f35d47cd0a64a',1,'task.h']]],
+  ['enotaskswaitingtimeout_6',['eNoTasksWaitingTimeout',['../db/da4/task_8h.html#afd168a210ae0f2fb0fca242860a8178ea004c4d9f1a2619193750d0e2f18f6046',1,'task.h']]],
+  ['eready_7',['eReady',['../db/da4/task_8h.html#a1749369458e2282a22e862a619a3892ca8570b65f331057b2cf92c504f0a2bc83',1,'task.h']]],
+  ['erunning_8',['eRunning',['../db/da4/task_8h.html#a1749369458e2282a22e862a619a3892ca83318c0d58e6b2bafaefa1be597fb8b6',1,'task.h']]],
+  ['esetbits_9',['eSetBits',['../db/da4/task_8h.html#ae8abc4f7da5b6880467daafbf19cd233ab7b1af2eeee53ae78eeff37c1cb6f79b',1,'task.h']]],
+  ['esetvaluewithoutoverwrite_10',['eSetValueWithoutOverwrite',['../db/da4/task_8h.html#ae8abc4f7da5b6880467daafbf19cd233acc4dd3fe71b62c751187a2c4c515abac',1,'task.h']]],
+  ['esetvaluewithoverwrite_11',['eSetValueWithOverwrite',['../db/da4/task_8h.html#ae8abc4f7da5b6880467daafbf19cd233ab61fc296ef909186b5824c823b33e130',1,'task.h']]],
+  ['estandardsleep_12',['eStandardSleep',['../db/da4/task_8h.html#afd168a210ae0f2fb0fca242860a8178ea2c539add8104402c6336bc33a660d1d1',1,'task.h']]],
+  ['esuspended_13',['eSuspended',['../db/da4/task_8h.html#a1749369458e2282a22e862a619a3892caf35a900d49fdfc2502eefc68fdb70f72',1,'task.h']]]
 ];

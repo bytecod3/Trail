@@ -104,9 +104,12 @@ $(function(){initNavTree('d7/d74/stm32f4xx__hal__conf_8h.html','../../',''); });
 <code>#include &quot;stm32f4xx_hal_exti.h&quot;</code><br />
 <code>#include &quot;stm32f4xx_hal_dma.h&quot;</code><br />
 <code>#include &quot;stm32f4xx_hal_cortex.h&quot;</code><br />
+<code>#include &quot;stm32f4xx_hal_adc.h&quot;</code><br />
 <code>#include &quot;stm32f4xx_hal_flash.h&quot;</code><br />
 <code>#include &quot;stm32f4xx_hal_i2c.h&quot;</code><br />
 <code>#include &quot;stm32f4xx_hal_pwr.h&quot;</code><br />
+<code>#include &quot;stm32f4xx_hal_spi.h&quot;</code><br />
+<code>#include &quot;stm32f4xx_hal_tim.h&quot;</code><br />
 <code>#include &quot;stm32f4xx_hal_uart.h&quot;</code><br />
 </div>
 <p><a href="../../d7/d74/stm32f4xx__hal__conf_8h_source.html">Go to the source code of this file.</a></p>
@@ -115,7 +118,10 @@ $(function(){initNavTree('d7/d74/stm32f4xx__hal__conf_8h.html','../../',''); });
 Macros</h2></td></tr>
 <tr class="memitem:a877ae99e8c47a609ea97c888912bf75f" id="r_a877ae99e8c47a609ea97c888912bf75f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a877ae99e8c47a609ea97c888912bf75f">HAL_MODULE_ENABLED</a></td></tr>
 <tr class="memdesc:a877ae99e8c47a609ea97c888912bf75f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the list of modules to be used in the HAL driver.  <br /></td></tr>
+<tr class="memitem:a476f1655c969ae57e89a74d98c75f43f" id="r_a476f1655c969ae57e89a74d98c75f43f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a476f1655c969ae57e89a74d98c75f43f">HAL_ADC_MODULE_ENABLED</a></td></tr>
 <tr class="memitem:a19999766418b0224871f732d800841c6" id="r_a19999766418b0224871f732d800841c6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19999766418b0224871f732d800841c6">HAL_I2C_MODULE_ENABLED</a></td></tr>
+<tr class="memitem:a8ad4712bf4add56892d057778e826e0c" id="r_a8ad4712bf4add56892d057778e826e0c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ad4712bf4add56892d057778e826e0c">HAL_SPI_MODULE_ENABLED</a></td></tr>
+<tr class="memitem:a23382b8f04b3e6db2c59dfa1ef5ea4a2" id="r_a23382b8f04b3e6db2c59dfa1ef5ea4a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23382b8f04b3e6db2c59dfa1ef5ea4a2">HAL_TIM_MODULE_ENABLED</a></td></tr>
 <tr class="memitem:a167269406e73327b95c3bb7b9cfe6d89" id="r_a167269406e73327b95c3bb7b9cfe6d89"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a167269406e73327b95c3bb7b9cfe6d89">HAL_UART_MODULE_ENABLED</a></td></tr>
 <tr class="memitem:a86165f80d6078719ee0715afe13febf5" id="r_a86165f80d6078719ee0715afe13febf5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86165f80d6078719ee0715afe13febf5">HAL_GPIO_MODULE_ENABLED</a></td></tr>
 <tr class="memitem:aeb359e861d8a92c233c3229657dbcd74" id="r_aeb359e861d8a92c233c3229657dbcd74"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb359e861d8a92c233c3229657dbcd74">HAL_EXTI_MODULE_ENABLED</a></td></tr>
@@ -342,6 +348,20 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a id="a476f1655c969ae57e89a74d98c75f43f" name="a476f1655c969ae57e89a74d98c75f43f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a476f1655c969ae57e89a74d98c75f43f">&#9670;&#160;</a></span>HAL_ADC_MODULE_ENABLED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HAL_ADC_MODULE_ENABLED</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aa9b5a3a425901e097de70092dbe31e0f" name="aa9b5a3a425901e097de70092dbe31e0f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa9b5a3a425901e097de70092dbe31e0f">&#9670;&#160;</a></span>HAL_CORTEX_MODULE_ENABLED</h2>
 
@@ -464,6 +484,34 @@ Macros</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define HAL_RCC_MODULE_ENABLED</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ad4712bf4add56892d057778e826e0c" name="a8ad4712bf4add56892d057778e826e0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ad4712bf4add56892d057778e826e0c">&#9670;&#160;</a></span>HAL_SPI_MODULE_ENABLED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HAL_SPI_MODULE_ENABLED</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a23382b8f04b3e6db2c59dfa1ef5ea4a2" name="a23382b8f04b3e6db2c59dfa1ef5ea4a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23382b8f04b3e6db2c59dfa1ef5ea4a2">&#9670;&#160;</a></span>HAL_TIM_MODULE_ENABLED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HAL_TIM_MODULE_ENABLED</td>
         </tr>
       </table>
 </div><div class="memdoc">

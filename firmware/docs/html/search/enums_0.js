@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['wifi_5fstate_5ft_0',['wifi_state_t',['../d6/d6f/_f_s_m_8h.html#a5f847547d1654ba6664de98abb0ee37c',1,'FSM.h']]]
+  ['enotifyaction_0',['eNotifyAction',['../db/da4/task_8h.html#ae8abc4f7da5b6880467daafbf19cd233',1,'task.h']]],
+  ['esleepmodestatus_1',['eSleepModeStatus',['../db/da4/task_8h.html#afd168a210ae0f2fb0fca242860a8178e',1,'task.h']]],
+  ['etaskstate_2',['eTaskState',['../db/da4/task_8h.html#a1749369458e2282a22e862a619a3892c',1,'task.h']]]
 ];

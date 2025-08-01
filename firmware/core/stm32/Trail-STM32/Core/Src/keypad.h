@@ -8,6 +8,7 @@
 #ifndef SRC_KEYPAD_H_
 #define SRC_KEYPAD_H_
 
+#include "main.h"
 #include <stdint.h>
 
 /**

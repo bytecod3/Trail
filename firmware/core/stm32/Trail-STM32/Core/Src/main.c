@@ -113,6 +113,9 @@ void xTaskLEDsUpdate(void const* pvParameters);
  */
 Keypad keypad;
 
+
+
+
 uint8_t activate_wifi = 1;
 
 /* initial system state */

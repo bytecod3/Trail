@@ -1,0 +1,2 @@
+../Core/Src/keypad.c:15:16:Keypad_get_num_cols	1
+../Core/Src/keypad.c:22:6:Keypad_initialise	1

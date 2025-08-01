@@ -576,10 +576,10 @@ void xTaskReadESPWIFI(void const *pvParameters) {
 //			}
 
 
-			HAL_UART_Transmit(&huart3, (uint8_t*)wifi_state , sizeof(wifi_state), 100);
+			//HAL_UART_Transmit(&huart3, (uint8_t*)wifi_state , sizeof(wifi_state), 100);
 
 		} else {
-			HAL_UART_Transmit(&huart3, (uint8_t*)"Timeout\r\n", sizeof("Timeout\r\n"), 100);
+			//HAL_UART_Transmit(&huart3, (uint8_t*)"Timeout\r\n", sizeof("Timeout\r\n"), 100);
 		}
 
 		vTaskDelay(pdMS_TO_TICKS(5)); /* prevent task starvation */
@@ -592,10 +592,10 @@ void xTaskReadESPWIFI(void const *pvParameters) {
  *
  */
 void xTaskReadKeypad (void const* argument) {
-	char n[2];
+	char n[10];
 	for(;;) {
-		sprintf(n, "%d\n", keypad.Keypad_get_num_cols());
-		HAL_UART_Transmit(&huart3, (uint8_t*)n, sizeof(n), HAL_MAX_DELAY);
+		int len = sprintf(n, "%d\r\n", keypad.Keypad_get_num_cols(&keypad));
+		HAL_UART_Transmit(&huart3, (uint8_t*)n, len, HAL_MAX_DELAY);
 		vTaskDelay(5);
 	}
 

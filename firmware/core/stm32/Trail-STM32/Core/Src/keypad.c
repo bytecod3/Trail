@@ -23,6 +23,6 @@ void Keypad_initialise(Keypad_type_t instance) {
 	instance->num_cols = 3;
 	instance->num_rows = 3;
 
-	instance->Keypad_get_cols = Keypad_get_num_cols;
+	instance->Keypad_get_num_cols = Keypad_get_num_cols;
 }
 

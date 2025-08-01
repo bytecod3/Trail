@@ -15,7 +15,7 @@
  * @brief structure to represent the keypad
  *
  */
-struct Keypad {
+typedef struct Keypad{
 	uint8_t num_cols;			/*!< number of columns  */
 	uint8_t num_rows;			/*!< number of rows */
 
@@ -27,31 +27,22 @@ struct Keypad {
 	/**
 	 * This function returns the number of rows that this keypad matrix has
 	 */
-	uint8_t (*Keypad_get_cols)(struct Keypad*);
+	uint8_t (*Keypad_get_num_cols)(struct Keypad*);
 
 	/**
 	 * This function returns the number of columns that this keypad matrix has
 	 */
-	uint8_t (*Keypad_get_rows)(struct Keypad*);
-};
+	uint8_t (*Keypad_get_num_rows)(struct Keypad*);
+} Keypad;
 
 /*!< pointer to keypad structure */
-typedef struct Keypad* Keypad_type_t;
+typedef Keypad* Keypad_type_t;
 
 /**
  * @brief This function scans the keypad for key presses
  */
 char Keypad_scan(Keypad_type_t instance);
 
-/**
- * This function returns the number of columns that this keypad matrix has
- */
-static uint8_t Keypad_get_num_cols(void);
-
-/**
- * This function returns the number of rows that this keypad matrix has
- */
-static uint8_t Keypad_get_num_rows(void);
 
 /**
  * @brief This function initializes the keypad structure
